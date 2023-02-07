@@ -21,11 +21,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e9e34c3fda51f8933c184195d638bcee9a7df78e
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -37,6 +42,9 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
     </dependencies>
+=======
+	</dependencies>
+>>>>>>> e9e34c3fda51f8933c184195d638bcee9a7df78e
 
 	<build>
 		<plugins>
