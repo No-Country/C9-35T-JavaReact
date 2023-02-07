@@ -1,0 +1,13 @@
+@import 'fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:is(html, body, #root) {
+	@apply h-full min-h-full;
+}
+
+body {
+	@apply bg-neutral-50 text-neutral-900;
+}
