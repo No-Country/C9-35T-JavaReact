@@ -21,4 +21,10 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body("");
     }
 
+    @DeleteMapping("/")
+    public ResponseEntity<User> deleteAll(){
+        iUserRepository.deleteAll();
+        return ResponseEntity.noContent().build();
+    }
+
 }
