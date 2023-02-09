@@ -14,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Table(name = "Categories")
+@Table(name = "categories")
 public class Category {
 
     @Id
@@ -22,10 +22,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Name", nullable = false)
-    private String Name;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "Description", nullable = false)
-    private String Description;
+    @Column(name = "description", nullable = false)
+    private String description;
     
 }
