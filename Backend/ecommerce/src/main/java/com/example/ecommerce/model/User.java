@@ -47,4 +47,5 @@ public class User {
     @Column(name = "softDelete")
     private boolean softDelete;
 
+    //agregar direccion
 }

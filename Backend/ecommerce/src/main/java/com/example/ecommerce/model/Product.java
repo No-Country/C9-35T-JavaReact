@@ -11,7 +11,7 @@ import org.springframework.data.annotation.Id;
 @Getter
 @Setter
 @Table(name = "productos")
-public class Producto {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
