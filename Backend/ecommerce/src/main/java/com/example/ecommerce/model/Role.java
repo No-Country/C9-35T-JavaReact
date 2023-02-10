@@ -1,12 +1,16 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Table;
-import org.springframework.data.annotation.Id;
+//import org.hibernate.annotations.Entity;
+//import org.hibernate.annotations.Id;
+
+import org.springframework.data.annotation.*;
 
 @Getter
 @Setter

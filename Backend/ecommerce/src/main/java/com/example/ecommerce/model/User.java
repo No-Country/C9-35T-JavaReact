@@ -1,12 +1,14 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -47,4 +49,14 @@ public class User {
     @Column(name = "softDelete")
     private boolean softDelete;
 
+
+/*
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders;
+    public void addOrder(Order order){
+        if (orders==null) orders=new ArrayList<>();
+        orders.add(order);
+         order.setUser(this);
+    }
+*/
 }
