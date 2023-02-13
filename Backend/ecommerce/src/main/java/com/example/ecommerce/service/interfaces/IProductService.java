@@ -9,7 +9,7 @@ public interface IProductService {
 
     ResponseEntity<?> getProduct(Long id);
 
-    ResponseEntity<?> getProductByCategory(Long id);
+    ResponseEntity<?> getProductsByCategory(Long id);
 
     ResponseEntity<?> postProduct(Product product);
 

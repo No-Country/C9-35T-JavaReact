@@ -1,10 +1,13 @@
 package com.example.ecommerce.service.interfaces;
 
+import com.example.ecommerce.dto.UserDto;
 import com.example.ecommerce.model.User;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public interface IUserService {
-    ResponseEntity<?> getAll();
+    ResponseEntity<List<UserDto>> getAll();
 
     ResponseEntity<?> getUser(Long id);
 

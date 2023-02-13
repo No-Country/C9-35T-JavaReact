@@ -29,4 +29,10 @@ public class Product {
 
     @Column(name = "stock")
     private Long stock;
+
+    @Column(name = "score")
+    private Double score;
+
+    @Column(name = "color")
+    private String color;
 }

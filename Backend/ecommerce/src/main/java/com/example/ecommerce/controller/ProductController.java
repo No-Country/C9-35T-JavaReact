@@ -2,6 +2,7 @@ package com.example.ecommerce.controller;
 
 import com.example.ecommerce.model.Product;
 import com.example.ecommerce.service.interfaces.IProductService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,5 +37,10 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
         return iProductService.deleteProduct(id);
+    }
+
+    @GetMapping("/categoty/{id}")
+    public ResponseEntity<?> getProductsByCategory(@PathVariable Long id) {
+        return iProductService.getProductsByCategory(id);
     }
 }
