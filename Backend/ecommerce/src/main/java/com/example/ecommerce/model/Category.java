@@ -27,5 +27,6 @@ public class Category {
 
     @Column(name = "description", nullable = false)
     private String description;
+
     
 }

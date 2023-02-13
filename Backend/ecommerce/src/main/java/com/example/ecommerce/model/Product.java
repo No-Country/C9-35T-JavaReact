@@ -1,12 +1,12 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -35,4 +35,22 @@ public class Product {
 
     @Column(name = "color")
     private String color;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Long category_id;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "products")
+    private Set<User> tutorials = new HashSet<>();
+
+    @OneToOne(mappedBy = "product")
+    private Post post;
+
+    @OneToMany(mappedBy = "product")
+    private HashSet<Item> items = new HashSet<>();
 }
