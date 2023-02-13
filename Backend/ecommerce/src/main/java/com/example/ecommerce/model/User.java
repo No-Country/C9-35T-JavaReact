@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -31,6 +33,9 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "adress")
+    private String adress;
+
     @Column(name = "password")
     private String password;
 
@@ -47,5 +52,17 @@ public class User {
     @Column(name = "softDelete")
     private boolean softDelete;
 
-    //agregar direccion
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "favorites",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "product_id")})
+    private Set<Product> products = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Review> reviews = new HashSet<>();
+
 }
