@@ -13,8 +13,7 @@ public class Item {
     @Column(name = "amount")
     private Long amount;
 
-
-    @ManyToOne
+    @OneToMany
     @Column(name = "product_id")
     private Product product;
 //
