@@ -31,7 +31,9 @@ public class ProductService implements IProductService {
 
     @Override
     public ResponseEntity<?> getProductsByCategory(Long id) {
-        return null;
+        List<Product> products = iProductRepository.findByCategory_id(id);
+        List<ProductDto> productsDto = products.stream().map(product -> mapper.getMapper().map(product, ProductDto.class)).collect(Collectors.toList());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(productsDto);
     }
 
     @Override

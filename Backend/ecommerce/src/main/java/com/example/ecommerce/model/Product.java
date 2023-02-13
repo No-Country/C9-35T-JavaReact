@@ -1,7 +1,9 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
@@ -10,12 +12,15 @@ import java.util.Set;
 
 @Getter
 @Setter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "productos")
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "name")
@@ -52,5 +57,8 @@ public class Product {
     private Post post;
 
     @OneToMany(mappedBy = "product")
-    private HashSet<Item> items = new HashSet<>();
+    private Set<Item> items = new HashSet<>();
+
+    @OneToMany(mappedBy = "product")
+    private Set<Offer> offers = new HashSet<>();
 }
