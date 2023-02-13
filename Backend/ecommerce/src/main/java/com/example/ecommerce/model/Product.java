@@ -11,7 +11,7 @@ import org.springframework.data.annotation.Id;
 @Getter
 @Setter
 @Table(name = "productos")
-public class Producto {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +29,10 @@ public class Producto {
 
     @Column(name = "stock")
     private Long stock;
+
+    @Column(name = "score")
+    private Double score;
+
+    @Column(name = "color")
+    private String color;
 }
