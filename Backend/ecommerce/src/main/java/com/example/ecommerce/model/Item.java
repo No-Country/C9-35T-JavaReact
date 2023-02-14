@@ -16,9 +16,9 @@ public class Item {
     @OneToMany
     @Column(name = "product_id")
     private Product product;
-//
-//    @ManyToOne
-//    @Column(name = "order_id")
-//    private Order order;
+
+    @ManyToOne
+    @Column(name = "order_id")
+    private Order order;
 
 }

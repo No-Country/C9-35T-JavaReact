@@ -65,4 +65,6 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Review> reviews = new HashSet<>();
 
+    @OneToMany(mappedBy = "user")
+    private Set<Shipment> shipments = new HashSet<>();
 }
