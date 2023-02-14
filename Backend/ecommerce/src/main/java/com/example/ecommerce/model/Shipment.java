@@ -23,4 +23,9 @@ public class Shipment {
     @Column(name = "date")
     private Date date;
 
+    @ManyToOne
+    private User user;
+
+    @OneToOne
+    private Order order;
 }
