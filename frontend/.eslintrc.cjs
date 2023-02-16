@@ -29,6 +29,7 @@ module.exports = {
 	},
 	plugins: ['react', 'prettier', 'unused-imports', 'simple-import-sort', 'import'],
 	rules: {
+		'react/prop-types': 'off',
 		'prettier/prettier': 'error',
 		'simple-import-sort/imports': 'error',
 		'simple-import-sort/exports': 'error',
