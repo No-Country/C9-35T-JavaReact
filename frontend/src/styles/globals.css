@@ -13,7 +13,7 @@
 }
 
 :is(html, body, #root) {
-	@apply h-full min-h-full;
+	@apply h-auto min-h-screen;
 }
 
 body {

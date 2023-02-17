@@ -13,6 +13,7 @@ module.exports = {
 		},
 	},
 	extends: [
+		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 		'standard',
@@ -20,6 +21,7 @@ module.exports = {
 		'plugin:tailwindcss/recommended',
 	],
 	overrides: [],
+	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
