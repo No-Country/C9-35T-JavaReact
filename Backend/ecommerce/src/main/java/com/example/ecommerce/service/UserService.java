@@ -10,13 +10,15 @@ import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserService implements IUserService {
+@Service
 
+public class UserService implements IUserService {
 
     @Autowired
     private IUserRepository iUserRepository;
@@ -29,15 +31,18 @@ public class UserService implements IUserService {
         List<UserDto> usersDto = users.stream().map(user -> mapper.getMapper().map(user, UserDto.class)).collect(Collectors.toList());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(usersDto);
     }
+
     @Override
     public ResponseEntity<Object> getUser(Long id) {
         User user = iUserRepository.findById(id).orElseThrow();
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(mapper.getMapper().map(user, UserDto.class));
     }
+
     @Override
     public ResponseEntity<Object> postUser(User user) {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(iUserRepository.save(user));
     }
+
     @Override
     public ResponseEntity<?> deleteUser(Long id) {
         User userToDelete = iUserRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found"));
@@ -46,6 +51,7 @@ public class UserService implements IUserService {
                 .body("User deleted");
 
     }
+
     @Override
     public ResponseEntity<?> updateUser(Long id, User user) {
         User userToUpdate = iUserRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found"));

@@ -13,7 +13,6 @@ import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-
 @Table(name = "categories")
 public class Category {
 

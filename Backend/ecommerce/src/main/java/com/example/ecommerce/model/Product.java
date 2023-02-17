@@ -43,7 +43,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Long category_id;
+    private Category category;
 
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
@@ -51,7 +51,7 @@ public class Product {
                     CascadeType.MERGE
             },
             mappedBy = "products")
-    private Set<User> tutorials = new HashSet<>();
+    private Set<User> users = new HashSet<>();
 
     @OneToOne(mappedBy = "product")
     private Post post;
