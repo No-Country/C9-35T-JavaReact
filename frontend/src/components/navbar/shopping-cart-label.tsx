@@ -6,7 +6,7 @@ function ShoppingCartLabel() {
 		<span className='flex w-full items-center justify-between'>
 			Shopping Cart
 			{cartItemsCount > 0 && (
-				<span className='flex h-5 w-5 items-center justify-center rounded-full bg-neutral-200 text-xs font-bold text-neutral-400'>
+				<span className='flex h-5 w-5 items-center justify-center rounded-full text-sm font-semibold text-neutral-500'>
 					{cartItemsCount}
 				</span>
 			)}
