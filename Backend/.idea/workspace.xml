@@ -4,12 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ce45627-efeb-460f-a0e0-5b9c7976159f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/UserController.java" afterDir="false" />
+    <list default="true" id="2eac2df6-3dbc-417b-b93a-40d9da97b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/AuthToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/LoginUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/exception/UserNotAllowedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/AuthorizationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/interfaces/IAuthorizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Shipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ShipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ShipmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,7 +61,7 @@
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
@@ -45,15 +70,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="ProjectId" id="2LqUorBoAygxu6fxGK0mNytDQdN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectId" id="2Lk9dzv8dv5nACqQholpU9hVv89" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,22 +82,34 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Victorio/Desktop/proyectos/Proyecto JavaReact No-Country/C9-35T-JavaReact/Backend&quot;
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.ecommerce.config" />
-    </key>
+  <component name="RunManager">
+    <configuration name="com.example.ecommerce.EcommerceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="mySqlPassword" value="Victorio1800" />
+        <env name="mySqlUrl" value="jdbc:mysql://localhost:8090/ecommerce" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.example.ecommerce.EcommerceApplication" />
+      <module name="ecommerce" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5ce45627-efeb-460f-a0e0-5b9c7976159f" name="Changes" comment="" />
-      <created>1676404305042</created>
+      <changelist id="2eac2df6-3dbc-417b-b93a-40d9da97b648" name="Changes" comment="" />
+      <created>1676598285440</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676404305042</updated>
+      <updated>1676598285440</updated>
     </task>
     <servers />
   </component>

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
 import java.util.Date;
 
@@ -13,6 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "reviews")
+@Entity
 public class Review {
 
     @Id
@@ -24,10 +26,10 @@ public class Review {
     private Date date;
 
     @ManyToOne
-    @Column(name = "user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @Column(name = "post_id")
+    @JoinColumn(name = "post_id")
     private Post post;
 }
