@@ -1,4 +1,6 @@
+import type { ReactNode } from 'react';
 import { createContext, useEffect, useReducer } from 'react';
+
 import { Product, ShoppoingCartProduct } from '~/types';
 
 export const ShoppingCartContext = createContext<{
@@ -113,7 +115,7 @@ const reducer = (state: Array<ShoppoingCartProduct>, action: ReducerAction) => {
 	return state;
 };
 
-export function ShoppingCartContextProvider({ children }: { children: React.ReactNode }) {
+export function ShoppingCartContextProvider({ children }: { children: ReactNode }) {
 	const [cart, dispatch] = useReducer(reducer, initialCart);
 
 	const cartItemsCount = cart.length;

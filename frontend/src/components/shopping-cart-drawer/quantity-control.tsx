@@ -1,3 +1,5 @@
+import { ComponentPropsWithoutRef } from 'react';
+
 import useShoppingCart from '~/hooks/use-shopping-cart';
 import { cn } from '~/utils/cn';
 
@@ -32,7 +34,7 @@ function QuantityControl({ id, quantity }: Props) {
  * Temporal component
  * IconButton is a better name
  */
-interface ControlButtonProps extends React.ComponentPropsWithoutRef<'button'> {}
+type ControlButtonProps = ComponentPropsWithoutRef<'button'>;
 
 function ControlButton({ children, ...props }: ControlButtonProps) {
 	return (

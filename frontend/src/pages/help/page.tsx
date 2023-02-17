@@ -27,6 +27,7 @@ function HelpPage() {
 					</p>
 				</section>
 				<Accordion
+					type='single'
 					defaultValue='preguntas-frecuentes'
 					className='flex w-full max-w-lg flex-col gap-4'
 				>

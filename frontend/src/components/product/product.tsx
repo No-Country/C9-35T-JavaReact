@@ -1,9 +1,8 @@
 import useShoppingCart from '~/hooks/use-shopping-cart';
-import { Product } from '~/types';
+import type { Product as ProductType } from '~/types';
 import { currencyFormat } from '~/utils/currency-format';
-import { getLocale } from '~/utils/get-locale';
 
-function Product({ id, name, image, price, stock }: Product) {
+function Product({ id, name, image, price, stock }: ProductType) {
 	const product = { id, name, image, price, stock };
 	const { addToCart } = useShoppingCart();
 	return (

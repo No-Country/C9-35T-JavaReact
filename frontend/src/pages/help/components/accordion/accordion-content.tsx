@@ -1,10 +1,11 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 /* eslint-disable tailwindcss/classnames-order */
+import type { AccordionContentProps } from '@radix-ui/react-accordion';
 import { AccordionContent as RadixAccordionContent } from '@radix-ui/react-accordion';
 
 import { cn } from '~/utils/cn';
 
-function AccordionContent({ children, className, ...props }) {
+function AccordionContent({ children, className, ...props }: AccordionContentProps) {
 	return (
 		<RadixAccordionContent
 			className={cn(

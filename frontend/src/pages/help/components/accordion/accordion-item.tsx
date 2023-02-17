@@ -1,8 +1,9 @@
+import type { AccordionItemProps } from '@radix-ui/react-accordion';
 import { AccordionItem as RadixAccordionItem } from '@radix-ui/react-accordion';
 
 import { cn } from '~/utils/cn';
 
-function AccordionItem({ value, children, className, ...props }) {
+function AccordionItem({ value, children, className, ...props }: AccordionItemProps) {
 	return (
 		<RadixAccordionItem
 			value={value}

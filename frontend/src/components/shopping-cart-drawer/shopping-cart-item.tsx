@@ -1,7 +1,7 @@
+import { HeartIcon, TrashIcon } from '~/components/ui/icons/outline';
 import useShoppingCart from '~/hooks/use-shopping-cart';
 import { ShoppoingCartProduct } from '~/types';
 import { currencyFormat } from '~/utils/currency-format';
-import { HeartIcon, TrashIcon } from '~/components/ui/icons/outline';
 
 import QuantityControl from './quantity-control';
 

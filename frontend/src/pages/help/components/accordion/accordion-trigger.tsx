@@ -1,3 +1,4 @@
+import type { AccordionTriggerProps } from '@radix-ui/react-accordion';
 import {
 	AccordionHeader,
 	AccordionTrigger as RadixAccordionTrigger,
@@ -5,7 +6,7 @@ import {
 
 import { cn } from '~/utils/cn';
 
-function AccordionTrigger({ children, className, ...props }) {
+function AccordionTrigger({ children, className, ...props }: AccordionTriggerProps) {
 	return (
 		<AccordionHeader className='flex'>
 			<RadixAccordionTrigger

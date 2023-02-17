@@ -1,8 +1,9 @@
+import type { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 interface Props {
 	href: string;
-	icon?: React.FC;
+	icon?: FC;
 	label: string;
 }
 

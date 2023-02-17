@@ -1,7 +1,8 @@
 import type { ComponentPropsWithoutRef } from 'react';
+
 import { cn } from '~/utils/cn';
 
-interface Props extends ComponentPropsWithoutRef<'svg'> {}
+type Props = ComponentPropsWithoutRef<'svg'>;
 
 function SearchIcon(props: Props) {
 	return (
