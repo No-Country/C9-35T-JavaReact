@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import Product from '~/components/product/product';
 import { ProductService } from '~/servicies/products.service';
@@ -30,6 +31,7 @@ function HomePage() {
 					))}
 				</section>
 			</main>
+			<Outlet />
 		</>
 	);
 }
