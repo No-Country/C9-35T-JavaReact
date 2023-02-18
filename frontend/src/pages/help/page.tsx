@@ -19,7 +19,7 @@ function HelpPage() {
 					<ArrowLeftIcon className='h-4 w-4' /> Ir al inicio
 				</NavLink>
 			</header>
-			<main className='p-6'>
+			<main className='mx-auto w-full max-w-6xl p-6'>
 				<section className='mb-6'>
 					<h1 className='text-xl font-bold'>Ayuda</h1>
 					<p className='text-sm font-medium text-neutral-500'>
@@ -29,7 +29,7 @@ function HelpPage() {
 				<Accordion
 					type='single'
 					defaultValue='preguntas-frecuentes'
-					className='flex w-full max-w-lg flex-col gap-4'
+					className='flex flex-col gap-4'
 				>
 					<AccordionItem value='preguntas-frecuentes'>
 						<AccordionTrigger>Preguntas frecuentes</AccordionTrigger>

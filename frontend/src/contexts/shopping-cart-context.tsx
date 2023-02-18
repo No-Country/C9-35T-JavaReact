@@ -3,7 +3,7 @@ import { createContext, useEffect, useReducer } from 'react';
 
 import { Product, ShoppoingCartProduct } from '~/types';
 
-export const ShoppingCartContext = createContext<{
+type ShoppingCartContextType = {
 	addToCart: (product: Product) => void;
 	cart: ShoppoingCartProduct[];
 	cartItemsCount: number;
@@ -14,7 +14,11 @@ export const ShoppingCartContext = createContext<{
 	removeFromCart: (productId: string) => void;
 	subtotal: number;
 	total: number;
-}>({} as any);
+};
+
+export const ShoppingCartContext = createContext<ShoppingCartContextType>(
+	{} as ShoppingCartContextType
+);
 
 enum CartAction {
 	ADD_TO_CART = 'ADD_TO_CART',
@@ -27,11 +31,20 @@ enum CartAction {
 
 type ReducerAction = {
 	type: CartAction;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	payload?: any;
 };
 
-const initialCart: Array<ShoppoingCartProduct> =
-	JSON.parse(window.localStorage.getItem('cart') || '') ?? [];
+const getInitialCart = () => {
+	try {
+		const cart = JSON.parse(window.localStorage.getItem('cart') || '') ?? [];
+		return cart;
+	} catch {
+		return [];
+	}
+};
+
+const initialCart: Array<ShoppoingCartProduct> = getInitialCart();
 
 const reducer = (state: Array<ShoppoingCartProduct>, action: ReducerAction) => {
 	if (action.type === CartAction.ADD_TO_CART) {

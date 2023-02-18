@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, useId } from 'react';
+import { ComponentPropsWithoutRef, forwardRef, useId } from 'react';
 
 import { cn } from '~/utils/cn';
 
@@ -6,7 +6,7 @@ interface Props extends ComponentPropsWithoutRef<'input'> {
 	label: string;
 }
 
-function TextField({ label, ...props }: Props) {
+const TextField = forwardRef<HTMLInputElement, Props>(function ({ label, ...props }: Props, ref) {
 	const id = useId();
 
 	return (
@@ -15,6 +15,7 @@ function TextField({ label, ...props }: Props) {
 				{label}
 			</label>
 			<input
+				ref={ref}
 				{...props}
 				id={id}
 				type='text'
@@ -22,6 +23,8 @@ function TextField({ label, ...props }: Props) {
 			/>
 		</fieldset>
 	);
-}
+});
+
+TextField.displayName = 'TextField';
 
 export default TextField;

@@ -1,7 +1,9 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { ShoppingCartIcon, XIcon } from '~/components/ui/icons/outline';
+import { useAuth } from '~/hooks/use-auth';
 import useShoppingCart from '~/hooks/use-shopping-cart';
 
 import Button from '../ui/primitives/button';
@@ -10,6 +12,16 @@ import ProductList from './product-list';
 function ShoppingCartDrawer() {
 	const [open, setOpen] = useState(false);
 	const { subtotal, cartItemsCount } = useShoppingCart();
+	const { isUserLoggedIn } = useAuth();
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		if (!isUserLoggedIn) {
+			setOpen(false);
+			navigate('/');
+			// requestLogin();
+		}
+	};
 
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
@@ -40,7 +52,7 @@ function ShoppingCartDrawer() {
 					</section>
 					<footer className='flex flex-col gap-2 p-4'>
 						Subtotal: {subtotal}
-						<Button>Comprar</Button>
+						<Button onClick={handleClick}>Comprar</Button>
 					</footer>
 				</Dialog.Content>
 			</Dialog.Portal>

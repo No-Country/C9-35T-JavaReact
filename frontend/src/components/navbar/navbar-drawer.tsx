@@ -9,6 +9,7 @@ import {
 	XIcon,
 } from '~/components/ui/icons/outline';
 import { Route } from '~/constants';
+import { useAuth } from '~/hooks/use-auth';
 
 import NavbarList from './navbar-list';
 import ShoppingCartLabel from './shopping-cart-label';
@@ -68,6 +69,7 @@ const LINKS = [
 ];
 
 function NavbarDrawer() {
+	const { isUserLoggedIn, user } = useAuth();
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -83,21 +85,38 @@ function NavbarDrawer() {
 					forceMount
 					className='fixed top-0 left-0 z-40 grid h-screen w-80 grid-rows-[auto_1fr] overflow-y-auto rounded-r-2xl bg-white transition-transform'
 				>
-					<header className='flex flex-col gap-4 bg-neutral-300 p-4 pt-0'>
-						<figure className='mt-12 h-16 w-16 rounded-full bg-black/10'></figure>
-						<section>
-							<p className='font-semibold'>Jessica Smith</p>
-							<p className='text-sm font-medium text-neutral-600'>jessica@gmail.com</p>
-						</section>
-						<Dialog.Close asChild>
-							<button
-								type='button'
-								className='absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-white hover:bg-black/10'
-							>
-								<XIcon />
-							</button>
-						</Dialog.Close>
-					</header>
+					{isUserLoggedIn && user ? (
+						<header className='flex flex-col gap-4 bg-neutral-300 p-4 pt-0'>
+							<figure className='mt-12 h-16 w-16 rounded-full bg-black/10'></figure>
+							<section>
+								<p className='font-semibold'>
+									{user.name} {user.lastName}
+								</p>
+								<p className='text-sm font-medium text-neutral-600'>{user.email}</p>
+							</section>
+							<Dialog.Close asChild>
+								<button
+									type='button'
+									className='absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-white hover:bg-black/10'
+								>
+									<XIcon />
+								</button>
+							</Dialog.Close>
+						</header>
+					) : (
+						<header className='flex flex-col gap-6'>
+							<button className='w-full px-6 py-3 text-left'>Registro</button>
+							<button className='w-full px-6 py-3 text-left'>Iniciar sesion</button>
+							<Dialog.Close asChild>
+								<button
+									type='button'
+									className='absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-white hover:bg-black/10'
+								>
+									<XIcon />
+								</button>
+							</Dialog.Close>
+						</header>
+					)}
 					<NavbarList links={LINKS} />
 				</Dialog.Content>
 			</Dialog.Portal>
