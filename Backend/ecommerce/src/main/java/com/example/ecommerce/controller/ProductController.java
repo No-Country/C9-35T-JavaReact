@@ -39,7 +39,7 @@ public class ProductController {
         return iProductService.deleteProduct(id);
     }
 
-    @GetMapping("/categoty/{id}")
+    @GetMapping("/category/{id}")
     public ResponseEntity<?> getProductsByCategory(@PathVariable Long id) {
         return iProductService.getProductsByCategory(id);
     }
