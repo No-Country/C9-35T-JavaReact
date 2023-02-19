@@ -4,4 +4,6 @@ export const enum Route {
 	PROFILE = '/perfil',
 	PRODUCTS = '/productos',
 	SHOPPING_CART = '/carrito',
+	LOGIN = '/acceso',
+	REGISTER = '/registro',
 }

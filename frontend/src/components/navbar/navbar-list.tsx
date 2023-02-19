@@ -4,15 +4,16 @@ import NavbarLink from './navbar-link';
 
 interface Props {
 	links: Array<any>;
+	closeModal: () => void;
 }
 
-function NavbarList({ links }: Props) {
+function NavbarList({ links, closeModal }: Props) {
 	return (
 		<ScrollArea.Root className='overflow-hidden'>
 			<ScrollArea.Viewport className='h-full w-full'>
-				<nav className='flex flex-col gap-4'>
+				<nav className='flex flex-col'>
 					{links.map(link => (
-						<NavbarLink key={link.href} {...link} />
+						<NavbarLink key={link.href} {...link} closeModal={closeModal} />
 					))}
 				</nav>
 			</ScrollArea.Viewport>

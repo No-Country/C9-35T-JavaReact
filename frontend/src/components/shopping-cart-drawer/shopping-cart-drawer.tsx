@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { ShoppingCartIcon, XIcon } from '~/components/ui/icons/outline';
 import { useAuth } from '~/hooks/use-auth';
 import useShoppingCart from '~/hooks/use-shopping-cart';
+import { currencyFormat } from '~/utils/currency-format';
 
 import Button from '../ui/primitives/button';
 import ProductList from './product-list';
@@ -18,8 +19,7 @@ function ShoppingCartDrawer() {
 	const handleClick = () => {
 		if (!isUserLoggedIn) {
 			setOpen(false);
-			navigate('/');
-			// requestLogin();
+			navigate('/acceso');
 		}
 	};
 
@@ -51,7 +51,7 @@ function ShoppingCartDrawer() {
 						<ProductList />
 					</section>
 					<footer className='flex flex-col gap-2 p-4'>
-						Subtotal: {subtotal}
+						Subtotal: {currencyFormat(subtotal)}
 						<Button onClick={handleClick}>Comprar</Button>
 					</footer>
 				</Dialog.Content>

@@ -3,15 +3,14 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { Route } from '~/constants';
 import { useAuth } from '~/hooks/use-auth';
 
-function ProtectedRoute() {
+function RedirectIfLoggedRoute() {
 	const { isUserLoggedIn } = useAuth();
 
-	if (!isUserLoggedIn) {
-		console.log('User is not logged in');
-		return <Navigate to={Route.LOGIN} replace />;
+	if (isUserLoggedIn) {
+		return <Navigate to={Route.ROOT} replace />;
 	}
 
 	return <Outlet />;
 }
 
-export default ProtectedRoute;
+export default RedirectIfLoggedRoute;

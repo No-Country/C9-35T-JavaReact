@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import Product from '~/components/product/product';
 import { ProductService } from '~/servicies/products.service';
-import { Product as ProductType } from '~/types';
+import type { Product as ProductType } from '~/types';
 
 function HomePage() {
 	const [products, setProducts] = useState<ProductType[]>([]);

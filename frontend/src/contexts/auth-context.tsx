@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
 
+import { useLocalStorage } from '~/hooks/use-local-storage';
 import { authService } from '~/servicies/auth.service';
 import { AuthCredentials, User } from '~/types';
 
@@ -17,11 +18,9 @@ type AuthContextType = {
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 
 export function AuthContextProvider({ children }: { children: ReactNode }) {
-	const [user, setUser] = useState<User | null>(null);
-	const [token, setToken] = useState<string | null>(window.localStorage.getItem('token') ?? null);
+	const [user, setUser] = useLocalStorage<User | null>('user', null);
+	const [token, setToken] = useLocalStorage('token', '');
 	const [showLoginModal, setShowLoginModal] = useState(false);
-
-	const isUserLoggedIn = user !== null;
 
 	useEffect(() => {
 		if (user || !token) return;
@@ -51,7 +50,7 @@ export function AuthContextProvider({ children }: { children: ReactNode }) {
 	return (
 		<AuthContext.Provider
 			value={{
-				isUserLoggedIn,
+				isUserLoggedIn: Boolean(user),
 				user,
 				showLoginModal,
 				login,

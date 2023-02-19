@@ -10,6 +10,7 @@ module.exports = {
 		},
 		tailwindcss: {
 			callees: ['cn'],
+			config: 'tailwind.config.cjs',
 		},
 	},
 	extends: [
@@ -31,6 +32,7 @@ module.exports = {
 	},
 	plugins: ['react', 'prettier', 'unused-imports', 'simple-import-sort', 'import'],
 	rules: {
+		'@typescript-eslint/consistent-type-imports': 'warn',
 		'react/prop-types': 'off',
 		'prettier/prettier': 'error',
 		'simple-import-sort/imports': 'error',

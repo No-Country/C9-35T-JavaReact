@@ -13,9 +13,11 @@ export interface AuthCredentials {
 export interface Product {
 	id: string;
 	name: string;
+	desc: string;
 	image: string;
 	price: number;
 	stock: number;
+	category: string;
 }
 
 export interface ShoppoingCartProduct extends Product {
