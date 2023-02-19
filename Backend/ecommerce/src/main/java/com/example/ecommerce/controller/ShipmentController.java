@@ -34,4 +34,10 @@ public class ShipmentController {
     public ResponseEntity<Shipment> getShipment(@PathVariable Long id) {
         return iShipmentService.getShipment(id);
     }
+
+    @GetMapping("/user/{id}")
+    public ResponseEntity<?> getUserShipments(@PathVariable Long id) {
+        return iShipmentService.getUserShipments(id);
+    }
+
 }

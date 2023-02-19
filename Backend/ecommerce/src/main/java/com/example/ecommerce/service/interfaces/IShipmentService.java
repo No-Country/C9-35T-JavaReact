@@ -13,4 +13,6 @@ public interface IShipmentService {
     ResponseEntity<List<Shipment>> getAllShipments();
 
     ResponseEntity<Shipment> getShipment(Long id);
+
+    ResponseEntity<?> getUserShipments(Long id);
 }

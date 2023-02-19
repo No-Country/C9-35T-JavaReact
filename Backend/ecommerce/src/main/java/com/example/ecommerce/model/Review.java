@@ -25,6 +25,8 @@ public class Review {
     @Column(name = "date")
     private Date date;
 
+    @Column(name = "description")
+    private String description;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

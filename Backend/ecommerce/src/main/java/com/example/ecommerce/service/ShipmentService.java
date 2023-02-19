@@ -9,6 +9,7 @@ import com.example.ecommerce.repository.IShipmentRepository;
 import com.example.ecommerce.repository.IUserRepository;
 import com.example.ecommerce.service.interfaces.IShipmentService;
 import com.example.ecommerce.service.interfaces.IUserService;
+import io.micrometer.observation.annotation.Observed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+
 @Service
 
 public class ShipmentService implements IShipmentService {
@@ -47,5 +49,19 @@ public class ShipmentService implements IShipmentService {
     public ResponseEntity<Shipment> getShipment(Long id) {
         Shipment shipment = iShipmentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Shipment not found"));
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(shipment);
+    }
+
+    @Override
+    public ResponseEntity<?> getUserShipments(Long id) {
+        try {
+            List<Shipment> userShipments = iShipmentRepository.findByUser_id(id);
+            if (userShipments.isEmpty()) {
+                throw new ResourceNotFoundException("User has no shipments");
+            }
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(userShipments);
+        } catch (ResourceNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(e);
+        }
+
     }
 }
