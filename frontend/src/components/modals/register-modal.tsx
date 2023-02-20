@@ -1,67 +1,52 @@
-import { useForm } from 'react-hook-form';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import Button from '~/components/ui/primitives/button';
 import TextField from '~/components/ui/primitives/text-field';
 import { Route } from '~/constants';
-import { useAuth } from '~/hooks/use-auth';
 
+import DateField from '../ui/primitives/date-field';
 import Modal from './modal';
-
-type LoginFormValues = {
-	email: string;
-	password: string;
-};
+import { useRegisterModal } from './register/use-register-modal';
 
 function RegisterModal() {
-	const {
-		register,
-		handleSubmit,
-		formState: { isValid },
-	} = useForm<LoginFormValues>();
+	const { register, handleSubmit, errors } = useRegisterModal();
 	const location = useLocation();
-	const { login } = useAuth();
-
-	const onSubmit = async (data: LoginFormValues) => {
-		try {
-			await login(data);
-		} catch (error) {
-			console.error(error);
-		}
-	};
 
 	return (
 		<Modal headerLabel='Crear cuenta' inititalOpen={location.pathname === Route.REGISTER}>
 			<form
-				onSubmit={handleSubmit(onSubmit)}
+				onSubmit={handleSubmit}
 				className='my-6 grid-cols-2 gap-6 space-y-4  p-2 md:grid md:space-y-0'
 			>
-				<TextField label='Nombre' {...register('email', { required: 'El campo es requerido' })} />
-				<TextField
-					label='Apellidos'
-					{...register('email', { required: 'El campo es requerido' })}
-				/>
-				<TextField label='Teléfono' {...register('email', { required: 'El campo es requerido' })} />
-				<TextField
+				<TextField label='Nombre' {...register('name')} error={errors.name?.message} />
+				<TextField label='Apellidos' {...register('lastName')} error={errors.lastName?.message} />
+				<TextField label='Teléfono' {...register('phone')} error={errors.phone?.message} />
+				<DateField
 					label='Fecha de nacimiento'
-					{...register('email', { required: 'El campo es requerido' })}
+					placeholder='dd/mm/aaaa'
+					{...register('bornDate')}
+					error={errors.bornDate?.message}
 				/>
 				<TextField
+					type='email'
 					label='Correo electrónico'
 					className='col-span-2'
-					{...register('email', { required: 'El campo es requerido' })}
+					{...register('email')}
+					error={errors.email?.message}
 				/>
 				<TextField
+					type='password'
 					label='Contraseña'
-					{...register('password', { required: 'El campo es requerido' })}
+					{...register('password')}
+					error={errors.password?.message}
 				/>
 				<TextField
+					type='password'
 					label='Confirmar contraseña'
-					{...register('password', { required: 'El campo es requerido' })}
+					{...register('confirmPassword')}
+					error={errors.confirmPassword?.message}
 				/>
-				<Button disabled={!isValid} className='col-span-2 w-full'>
-					Registrarme
-				</Button>
+				<Button className='col-span-2 w-full'>Registrarme</Button>
 				<p className='col-span-2 text-center text-sm font-medium text-neutral-500'>
 					¿Ya tienes una cuenta?{' '}
 					<NavLink to={Route.LOGIN} className='font-semibold text-blue-600'>

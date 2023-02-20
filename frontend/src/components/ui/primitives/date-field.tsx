@@ -6,10 +6,9 @@ import { cn } from '~/utils/cn';
 interface Props extends ComponentPropsWithoutRef<'input'> {
 	label?: string;
 	error?: string;
-	type?: 'text' | 'password' | 'email';
 }
 
-const TextField = forwardRef<HTMLInputElement, Props>(function (
+const DateField = forwardRef<HTMLInputElement, Props>(function (
 	{ label, error, ...props }: Props,
 	ref
 ) {
@@ -26,9 +25,9 @@ const TextField = forwardRef<HTMLInputElement, Props>(function (
 				ref={ref}
 				{...props}
 				id={id}
-				type={props.type}
+				type='date'
 				className={cn(
-					'w-full rounded-md border border-gray-300/80 py-2 px-3 shadow-sm sm:text-sm',
+					'w-full rounded-md border border-gray-300/80 py-2 px-3 shadow-sm placeholder:text-neutral-300 sm:text-sm',
 					error && 'border-red-600 bg-red-50'
 				)}
 			/>
@@ -37,6 +36,6 @@ const TextField = forwardRef<HTMLInputElement, Props>(function (
 	);
 });
 
-TextField.displayName = 'TextField';
+DateField.displayName = 'TextField';
 
-export default TextField;
+export default DateField;

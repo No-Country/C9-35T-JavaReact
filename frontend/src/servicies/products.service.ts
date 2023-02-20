@@ -110,8 +110,18 @@ function findById(id: string): Promise<Product> {
 	return Promise.resolve(product);
 }
 
+function search(query: string): Promise<Product[]> {
+	return Promise.resolve(
+		products.filter(product => {
+			const { name, desc } = product;
+			return name.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
+		})
+	);
+}
+
 export const ProductService = {
 	getAll,
 	findByCategory,
 	findById,
+	search,
 };

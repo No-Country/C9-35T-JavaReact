@@ -10,6 +10,7 @@ import ProductsPage from '~/pages/products/page';
 import ProfilePage from '~/pages/profile/page';
 import ProtectedRoute from '~/pages/protected-route';
 import RedirectIfLoggedRoute from '~/pages/redirect-if-logged-route';
+import SearchPage from '~/pages/search/page';
 
 import LoginModal from './modals/login-modal';
 import RegisterModal from './modals/register-modal';
@@ -31,6 +32,7 @@ function App() {
 					</Route>
 					<Route path='/productos' element={<ProductsPage />} />
 					<Route path='/productos/:id' element={<ProductDetailPage />} />
+					<Route path='/search' element={<SearchPage />} />
 				</Route>
 				<Route element={<ProtectedRoute />}>
 					<Route path={RouteName.PROFILE} element={<ProfilePage />} />
