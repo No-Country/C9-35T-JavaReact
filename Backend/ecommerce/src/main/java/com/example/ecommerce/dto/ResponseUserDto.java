@@ -3,7 +3,7 @@ package com.example.ecommerce.dto;
 import lombok.Data;
 
 @Data
-public class UserDto {
+public class ResponseUserDto {
 
     private String firstName;
 
@@ -11,9 +11,5 @@ public class UserDto {
 
     private String email;
 
-    private String password;
-
-    private String adress;
-
-
+    private String token;
 }

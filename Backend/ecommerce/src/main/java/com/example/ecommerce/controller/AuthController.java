@@ -1,6 +1,7 @@
 package com.example.ecommerce.controller;
 
 import com.example.ecommerce.dto.LoginUserDto;
+import com.example.ecommerce.dto.ResponseUserDto;
 import com.example.ecommerce.dto.UserDto;
 import com.example.ecommerce.service.interfaces.IAuthorizationService;
 import com.example.ecommerce.util.JwtUtil;
@@ -30,13 +31,12 @@ public class AuthController {
     private IAuthorizationService iAuthorizationService;
 
 
-    @PostMapping("/register")
-    public ResponseEntity<UserDto> signUp(@RequestBody UserDto userDto) throws SQLIntegrityConstraintViolationException {
-        UserDto userSaved = iAuthorizationService.save(userDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userSaved);
+    @PostMapping("/signUp")
+    public ResponseEntity<?> signUp(@RequestBody UserDto userDto) throws SQLIntegrityConstraintViolationException {
+        return ResponseEntity.status(HttpStatus.CREATED).body( iAuthorizationService.save(userDto));
     }
 
-    @PostMapping("/login")
+    @PostMapping("/signIn")
     public ResponseEntity<?> signIn(@RequestBody LoginUserDto loginUser) throws AuthenticationException {
         return iAuthorizationService.login(loginUser);
     }
@@ -45,6 +45,5 @@ public class AuthController {
     public ResponseEntity<?> logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return iAuthorizationService.logout(request, response, auth);
-
     }
 }
