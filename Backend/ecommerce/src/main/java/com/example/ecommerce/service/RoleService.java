@@ -22,28 +22,28 @@ public class RoleService implements IRoleService {
     private IRoleRepository iRoleRepository;
 
     @Override
-    public ResponseEntity<?> findByName(RoleName roleName) {
-        try {
+    public Role findByName(RoleName roleName) {
             Role role = iRoleRepository.findByName(roleName);
             if (role == null) {
                 throw new ResourceNotFoundException("Role not found");
             }
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(role);
-        } catch (ResourceNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e);
-        }
+            return role;
     }
 
     @Override
-    public ResponseEntity<?> postRole(Role role) {
-        try {
-            if (iRoleRepository.existsByName(role.getName())) {
-                throw new ResourceFoundException("Role already exists");
-            }
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(iRoleRepository.save(role));
-        } catch (ResourceFoundException e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e);
+    public ResponseEntity<?> postRole(Role role) throws ResourceFoundException{
+        if (iRoleRepository.existsByName(role.getName())) {
+            throw new ResourceFoundException("Role already exists");
         }
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(iRoleRepository.save(role));
+    }
+
+    @Override
+    public Role createRole(Role role) throws ResourceFoundException {
+        if (iRoleRepository.existsByName(role.getName())) {
+            throw new ResourceFoundException("Role already exists");
+        }
+        return iRoleRepository.save(role);
     }
 
 }
