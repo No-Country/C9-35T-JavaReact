@@ -1,7 +1,9 @@
 package com.example.ecommerce.dto;
 
+import com.example.ecommerce.model.User;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
@@ -11,5 +13,5 @@ public class OrderDto {
 
     private String paymentMethod;
 
-    private Long userId;
+    private User user;
 }

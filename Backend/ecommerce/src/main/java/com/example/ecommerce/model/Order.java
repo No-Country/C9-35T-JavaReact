@@ -29,7 +29,7 @@ public class Order {
     private String paymentMethod;
 
 
-    @OneToMany(mappedBy = "items")
+    @OneToMany(mappedBy = "order")
     private Set<Item> items = new HashSet<>();
 
     @ManyToOne
