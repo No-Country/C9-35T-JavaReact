@@ -10,5 +10,5 @@ public enum RoleName {
     ROLE_ADMIN("Administrator"),
     ROLE_USER("User");
 
-    private String name;
+    private final String name;
 }

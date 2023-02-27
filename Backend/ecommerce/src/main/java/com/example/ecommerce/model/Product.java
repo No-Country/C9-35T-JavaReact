@@ -1,21 +1,18 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Builder
 @Getter
 @Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "productos")
+@Table(name = "products")
 public class Product {
 
     @jakarta.persistence.Id
@@ -35,13 +32,10 @@ public class Product {
     @Column(name = "stock")
     private Long stock;
 
-    @Column(name = "score")
-    private Double score;
-
     @Column(name = "color")
     private String color;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -59,6 +53,9 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<Item> items = new HashSet<>();
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval=true)
+    private Offer offer;
+
     @OneToMany(mappedBy = "product")
-    private Set<Offer> offers = new HashSet<>();
+    private Set<Score> scores = new HashSet<>();
 }

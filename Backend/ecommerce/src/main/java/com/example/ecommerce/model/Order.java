@@ -28,8 +28,11 @@ public class Order {
     @Column(name = "paymentMethod")
     private String paymentMethod;
 
+    @ManyToOne
+    @JoinColumn(name = "state_id")
+    private State state;
 
-    @OneToMany(mappedBy = "items")
+    @OneToMany(mappedBy = "order")
     private Set<Item> items = new HashSet<>();
 
     @ManyToOne

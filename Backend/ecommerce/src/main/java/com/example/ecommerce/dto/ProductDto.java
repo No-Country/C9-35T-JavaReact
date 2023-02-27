@@ -1,8 +1,10 @@
 package com.example.ecommerce.dto;
 
-import jakarta.persistence.Column;
+
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
 public class ProductDto {
 
@@ -12,10 +14,10 @@ public class ProductDto {
 
     private String description;
 
-    private String stock;
-
-    private Double score;
+    private Long stock;
 
     private String color;
+
+    private CategoryDto category;
 
 }

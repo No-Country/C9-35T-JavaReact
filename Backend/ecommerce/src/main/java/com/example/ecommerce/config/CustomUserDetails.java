@@ -11,16 +11,16 @@ import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
 
-    private String email;
+    private final String email;
 
-    private String password;
+    private final String password;
 
-    private List<GrantedAuthority> authorities = new ArrayList<>();
+    private final List<GrantedAuthority> authorities = new ArrayList<>();
 
     public CustomUserDetails(User user) {
         email = user.getEmail();
         password = user.getPassword();
-        authorities.add(new SimpleGrantedAuthority(user.getRole().getName().getName()));
+        authorities.add(new SimpleGrantedAuthority(user.getRole().getName().name()));
     }
 
     @Override

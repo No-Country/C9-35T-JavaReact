@@ -13,20 +13,12 @@ import com.example.ecommerce.model.enums.RoleName;
 
 
 @Component
-@Profile("test")
+@Profile("!test")
 public class DataLoaderRole implements CommandLineRunner {
 
     @Autowired
     private IRoleService roleService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private CustomUserDetailsService userService;
-
-    @Autowired
-    private IUserRepository userRepository;
 
     @Override
     public void run(String... args) throws Exception {
