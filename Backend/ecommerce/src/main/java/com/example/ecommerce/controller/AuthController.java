@@ -33,7 +33,7 @@ public class AuthController {
 
     @PostMapping("/signUp")
     public ResponseEntity<?> signUp(@RequestBody UserDto userDto) throws SQLIntegrityConstraintViolationException {
-        return ResponseEntity.status(HttpStatus.CREATED).body( iAuthorizationService.save(userDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body( iAuthorizationService.saveAdmin(userDto));
     }
 
     @PostMapping("/signIn")

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 public class OrderService implements IOrderService {
 
@@ -48,10 +49,11 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public ResponseEntity<?> patchOrder(Long id,Order order) {
+    public ResponseEntity<?> patchOrder(Long id, Order order) {
         Order orderToUpdate = iOrderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order not found"));
         orderToUpdate.setOrderDate(order.getOrderDate());
         orderToUpdate.setPaymentMethod(order.getPaymentMethod());
+        orderToUpdate.setState(order.getState());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(iOrderRepository.save(orderToUpdate));
     }
 

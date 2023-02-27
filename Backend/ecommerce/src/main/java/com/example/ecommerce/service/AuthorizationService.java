@@ -23,8 +23,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -51,6 +53,7 @@ public class AuthorizationService implements IAuthorizationService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private AuthenticationManager authenticationManager;
+
 
     @Override
     public ResponseEntity<?> save(UserDto requestUserDto) {
@@ -91,16 +94,20 @@ public class AuthorizationService implements IAuthorizationService {
         user.setCreationDate(new Date());
         User userSaved = userRepository.save(user);
 
-        String token = this.authenticate(requestUserDto.getEmail(), requestUserDto.getPassword());
+        try {
+            String token = this.authenticate(requestUserDto.getEmail(), requestUserDto.getPassword());
 
-        ResponseUserDto responseUserDto = mapper.getMapper().map(userSaved, ResponseUserDto.class);
-        responseUserDto.setToken(token);
+            ResponseUserDto responseUserDto = mapper.getMapper().map(userSaved, ResponseUserDto.class);
+            responseUserDto.setToken(token);
 
-        return ResponseEntity.status(HttpStatus.OK).body(responseUserDto);
+            return ResponseEntity.status(HttpStatus.OK).body(responseUserDto);
+        } catch (AuthenticationException e) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
+        }
     }
 
 
-    private String authenticate(String email, String password) {
+    private String authenticate(String email, String password) throws AuthenticationException {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(email, password)
         );

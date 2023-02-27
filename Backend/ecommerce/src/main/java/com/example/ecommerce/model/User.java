@@ -1,11 +1,11 @@
 package com.example.ecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,8 +32,8 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "adress")
-    private String adress;
+    @Column(name = "address")
+    private String address;
 
     @Column(name = "password")
     private String password;
@@ -64,6 +64,11 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Review> reviews = new HashSet<>();
 
+
     @OneToMany(mappedBy = "user")
     private Set<Shipment> shipments = new HashSet<>();
+
+
+    @OneToMany(mappedBy = "user")
+    private Set<Score> scores = new HashSet<>();
 }
