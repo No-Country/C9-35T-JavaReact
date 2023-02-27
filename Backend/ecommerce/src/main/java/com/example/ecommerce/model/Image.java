@@ -17,7 +17,7 @@ public class Image {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "dataBase64")
+    @Column(name = "dataBase64",columnDefinition = "longtext")
     private String dataBase64;
 
     @Column(name = "name")
