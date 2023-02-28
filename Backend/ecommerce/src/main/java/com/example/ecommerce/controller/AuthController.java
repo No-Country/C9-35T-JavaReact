@@ -22,6 +22,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin
 public class AuthController {
 
     @Autowired
