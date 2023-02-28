@@ -1,6 +1,6 @@
 package com.example.ecommerce.model;
 
-import com.example.ecommerce.model.enums.RoleName;
+import com.example.ecommerce.model.enums.OrderState;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,19 +14,19 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "roles")
-public class Role {
+@Table(name = "states")
+public class State {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name",nullable = false)
+    @Column(name = "name", nullable = false)
     @Enumerated(EnumType.STRING)
-    private RoleName name;
+    private OrderState name;
 
-    @Column(name = "description",nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
 
     @Column(name = "creationDate")
@@ -36,5 +36,6 @@ public class Role {
     @Column(name = "updateDate")
     @UpdateTimestamp
     private Date updateDate;
+
 
 }

@@ -1,13 +1,11 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
+@Builder
 @Getter
 @Setter
 @Entity
@@ -18,7 +16,7 @@ public class Category {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "name", nullable = false)
@@ -26,5 +24,5 @@ public class Category {
 
     @Column(name = "description", nullable = false)
     private String description;
-    
+
 }

@@ -1,11 +1,9 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @Entity
@@ -19,7 +17,7 @@ public class Image {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "dataBase64")
+    @Column(name = "dataBase64",columnDefinition = "longtext")
     private String dataBase64;
 
     @Column(name = "name")

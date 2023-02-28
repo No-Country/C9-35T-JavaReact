@@ -13,8 +13,9 @@ public interface IUserService {
 
     ResponseEntity<?> postUser(User user);
 
-    ResponseEntity<?> deleteUser(Long id);
+    ResponseEntity<?> deleteUser(Long id,String token);
 
     ResponseEntity<?> updateUser(Long id, User user);
 
+    User findLoggedUser(String token);
 }

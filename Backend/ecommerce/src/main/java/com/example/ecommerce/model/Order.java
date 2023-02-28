@@ -22,12 +22,15 @@ public class Order {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "orderDate")
+    @Column(name = "orderDate", nullable = false)
     private Date orderDate;
 
     @Column(name = "paymentMethod")
     private String paymentMethod;
 
+    @ManyToOne
+    @JoinColumn(name = "state_id")
+    private State state;
 
     @OneToMany(mappedBy = "order")
     private Set<Item> items = new HashSet<>();

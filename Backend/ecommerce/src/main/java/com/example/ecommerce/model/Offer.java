@@ -21,10 +21,6 @@ public class Offer {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id")
-    private Product product;
-
     @Column(name = "description")
     private String description;
 
@@ -34,6 +30,7 @@ public class Offer {
     @Column(name = "endOffer")
     private Date endOffer;
 
-    @Column(name = "percentage")
+    @Column(name = "percentage", nullable = false)
     private Double percentage;
+
 }

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
-
 public class UserController {
 
     @Autowired
@@ -21,7 +20,6 @@ public class UserController {
         return iUserService.getAll();
     }
 
-    @PreAuthorize("hasAuthority('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
         return iUserService.getUser(id);
@@ -37,8 +35,9 @@ public class UserController {
         return iUserService.updateUser(id, user);
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        return iUserService.deleteUser(id);
+    public ResponseEntity<?> deleteUser(@PathVariable Long id, @RequestHeader(value = "Authorization") String token) {
+        return iUserService.deleteUser(id, token);
     }
 }

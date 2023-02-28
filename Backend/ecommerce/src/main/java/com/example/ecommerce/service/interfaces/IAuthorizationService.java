@@ -1,6 +1,7 @@
 package com.example.ecommerce.service.interfaces;
 
 import com.example.ecommerce.dto.LoginUserDto;
+import com.example.ecommerce.dto.ResponseUserDto;
 import com.example.ecommerce.dto.UserDto;
 import com.example.ecommerce.exception.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,9 +13,9 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 public interface IAuthorizationService {
 
-    UserDto save(UserDto requestUserDto);
+    ResponseEntity<?> save(UserDto requestUserDto);
 
-    UserDto saveAdmin( UserDto requestUserDto) throws SQLIntegrityConstraintViolationException;
+    ResponseEntity<?> saveAdmin( UserDto requestUserDto) throws SQLIntegrityConstraintViolationException;
 
     UserDto update( UserDto requestUserDto);
 

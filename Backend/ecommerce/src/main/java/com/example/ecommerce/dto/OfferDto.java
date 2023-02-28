@@ -12,4 +12,7 @@ public class OfferDto {
     private Date startOffer;
 
     private Date endOffer;
+
+    private Double percentage;
+
 }

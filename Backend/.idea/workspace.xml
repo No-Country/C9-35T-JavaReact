@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eac2df6-3dbc-417b-b93a-40d9da97b648" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ReviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/ReviewDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/interfaces/IReviewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/EcommerceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/EcommerceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ShipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ShipmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IShipmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IShipmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ShipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ShipmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/interfaces/IShipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/interfaces/IShipmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/dto/ProductDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,18 +61,21 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
   <component name="RunManager">
-    <configuration name="com.example.ecommerce.EcommerceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="EcommerceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <envs>
         <env name="mySqlPassword" value="Victorio1800" />
         <env name="mySqlUrl" value="jdbc:mysql://localhost:8090/ecommerce" />
+        <env name="jwtSecretKey" value="763979244226452948404D6351655468576D5A7134743777217A25432A462D4A" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.example.ecommerce.EcommerceApplication" />
       <module name="ecommerce" />
@@ -108,5 +105,28 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLSyntaxErrorException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/JwtAuthenticationFilter.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="authenticationManager" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Backend$com_example_ecommerce_EcommerceApplication.ic" NAME="com.example.ecommerce.EcommerceApplication Coverage Results" MODIFIED="1677172022853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -20,13 +20,13 @@ public class ReviewController {
        return  iReviewService.postReview(reviewDto);
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/user/{userId}")
     public ResponseEntity<?> getUserReviews(@PathVariable Long userId)
     {
        return iReviewService.getUserReviews(userId);
     }
 
-    @GetMapping("/post/{id}")
+    @GetMapping("/post/{postId}")
     public ResponseEntity<?> getPostReviews (@PathVariable Long postId)
     {
         return iReviewService.getPostReviews(postId);

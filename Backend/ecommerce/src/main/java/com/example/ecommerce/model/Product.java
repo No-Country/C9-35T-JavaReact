@@ -1,21 +1,21 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@Builder
 @Getter
 @Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "productos")
+@Table(name = "products")
 public class Product {
 
     @jakarta.persistence.Id
@@ -23,25 +23,30 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     private String name;
 
-    @Column(name = "price")
+    @Column(name = "price",nullable = false)
     private Double price;
 
-    @Column(name = "description")
+    @Column(name = "description",nullable = false)
     private String description;
 
-    @Column(name = "stock")
+    @Column(name = "stock",nullable = false)
     private Long stock;
 
-    @Column(name = "score")
-    private Double score;
-
-    @Column(name = "color")
+    @Column(name = "color",nullable = false)
     private String color;
 
-    @ManyToOne
+    @CreationTimestamp
+    @Column(name = "creationDate")
+    private Date creationDate;
+
+    @UpdateTimestamp
+    @Column(name = "updateDate")
+    private Date updateDate;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -59,6 +64,9 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<Item> items = new HashSet<>();
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval=true)
+    private Offer offer;
+
     @OneToMany(mappedBy = "product")
-    private Set<Offer> offers = new HashSet<>();
+    private Set<Score> scores = new HashSet<>();
 }

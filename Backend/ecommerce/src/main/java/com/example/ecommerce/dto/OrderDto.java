@@ -13,5 +13,9 @@ public class OrderDto {
 
     private String paymentMethod;
 
+
     private User user;
+
+    private String state;
+
 }
