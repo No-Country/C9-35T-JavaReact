@@ -17,7 +17,7 @@ public class Score {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "quality")
+    @Column(name = "quality",nullable = false)
     private Double quality;
 
     @ManyToOne

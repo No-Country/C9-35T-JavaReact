@@ -22,11 +22,11 @@ public class Role {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     @Enumerated(EnumType.STRING)
     private RoleName name;
 
-    @Column(name = "description")
+    @Column(name = "description",nullable = false)
     private String description;
 
     @Column(name = "creationDate")

@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eac2df6-3dbc-417b-b93a-40d9da97b648" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_24_0_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/Shipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,16 +66,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="EcommerceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />

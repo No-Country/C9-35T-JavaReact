@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
 import java.util.Date;
@@ -34,4 +36,12 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;
+
+    @CreationTimestamp
+    @Column(name = "creationDate")
+    private Date creationDate;
+
+    @UpdateTimestamp
+    @Column(name = "updateDate")
+    private Date updateDate;
 }
