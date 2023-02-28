@@ -20,6 +20,19 @@ export interface Product {
 	category: string;
 }
 
+export interface Address {
+	id: string;
+	street: string;
+	country: string;
+	state: string;
+	city: string;
+	zipCode: string;
+}
+
+export interface Profile extends Omit<User, 'id'>, Omit<Address, 'id'> {
+	id: string;
+}
+
 export interface ShoppoingCartProduct extends Product {
 	quantity: number;
 }

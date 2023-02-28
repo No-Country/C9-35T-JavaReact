@@ -13,6 +13,7 @@ import { Route } from '~/constants';
 import { useAuth } from '~/hooks/use-auth';
 import { cn } from '~/utils/cn';
 
+import LogoIcon from '../ui/icons/logo';
 import NavbarList from './navbar-list';
 import ShoppingCartLabel from './shopping-cart-label';
 
@@ -105,7 +106,7 @@ function NavbarDrawer() {
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
-				<button className='rounded-full p-2 text-neutral-600 transition-colors hover:bg-black/5'>
+				<button className='rounded-full p-2 text-neutral-200 transition-colors hover:bg-white/10'>
 					<MenuIcon />
 				</button>
 			</Dialog.Trigger>
@@ -115,28 +116,30 @@ function NavbarDrawer() {
 					forceMount
 					className='fixed top-0 left-0 z-40 grid h-screen w-80 grid-rows-[auto_1fr] overflow-y-auto rounded-r-2xl bg-white transition-transform'
 				>
-					<header className='flex flex-col gap-4 bg-neutral-300 p-4 pt-0'>
-						<figure className='mt-12 h-16 w-16 rounded-full bg-black/10'></figure>
+					<header className='flex flex-col gap-4 bg-gradient-to-r from-brown-900 to-brown-700 p-4 pt-0'>
+						<figure className='mt-12 flex h-16 w-16 items-center justify-center rounded-full bg-white/10'>
+							<LogoIcon />
+						</figure>
 						{isUserLoggedIn && user ? (
 							<section>
-								<p className='font-semibold'>
+								<p className='font-semibold text-white'>
 									{user.name} {user.lastName}
 								</p>
-								<p className='text-sm font-medium text-neutral-600'>{user.email}</p>
+								<p className='text-xs font-medium text-neutral-300'>{user.email}</p>
 							</section>
 						) : (
 							<section className='flex w-full flex-col gap-4'>
 								<Link
 									onClick={() => setOpen(false)}
 									to='/acceso'
-									className='w-full rounded-lg bg-neutral-500 px-6 py-2 text-center text-sm font-medium text-white'
+									className='w-full rounded-lg bg-white/20 px-6 py-2 text-center text-sm font-medium text-white'
 								>
 									Ingresa a tu cuenta
 								</Link>
 								<Link
 									onClick={() => setOpen(false)}
 									to='/registro'
-									className='w-full rounded-lg bg-transparent px-6 py-2 text-center text-sm font-medium text-neutral-800'
+									className='w-full rounded-lg bg-transparent px-6 py-2 text-center text-sm font-medium text-neutral-100'
 								>
 									Crear cuenta
 								</Link>
@@ -145,7 +148,7 @@ function NavbarDrawer() {
 						<Dialog.Close asChild>
 							<button
 								type='button'
-								className='absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-white hover:bg-black/10'
+								className='absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-white hover:bg-white/20'
 							>
 								<XIcon />
 							</button>

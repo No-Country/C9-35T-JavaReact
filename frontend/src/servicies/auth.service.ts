@@ -1,7 +1,9 @@
+import type { RegisterSchemaType } from '~/components/modals/register/use-register-modal';
+import { API_URL } from '~/constants';
 import type { AuthCredentials } from '~/types';
 
 async function login({ email, password }: AuthCredentials) {
-	const response = await fetch('https://api.example.com/login', {
+	const response = await fetch(`${API_URL}/auth/signIn`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -11,30 +13,46 @@ async function login({ email, password }: AuthCredentials) {
 
 	const { token, user } = await response.json();
 
-	// const token = window.btoa(`${email}:${password}`);
-
-	// const user: User = {
-	// 	id: '9901238401234',
-	// 	name: 'Jessica',
-	// 	lastName: 'Smith',
-	// 	email: 'jessica@gmail.com',
-	// };
-
 	return { token, user };
 }
 
-async function getUser({ token }: { token: string }) {
-	console.log('fetch with token to get user data', token);
-	// fetch with token
-	return {
-		id: '9901238401234',
-		name: 'Jessica',
-		lastName: 'Smith',
-		email: 'jessica@gmail.com',
-	};
+async function register({ email, password, name, lastName, phone, bornDate }: RegisterSchemaType) {
+	const response = await fetch(`${API_URL}/auth/signUp`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ email, password, name, lastName, phone, bornDate }),
+	});
+
+	const data = await response.json();
+	console.log(data);
+}
+
+async function logout() {
+	const response = await fetch(`${API_URL}/auth/logout`);
+
+	if (!response.ok) {
+		throw new Error('Error al cerrar sesión');
+	}
+}
+
+async function getUser({ token, userId }: { token: string; userId: number }) {
+	const response = await fetch(`${API_URL}/users/${userId}`, {
+		method: 'GET',
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	});
+
+	const data = await response.json();
+
+	return data;
 }
 
 export const authService = {
+	register,
 	login,
+	logout,
 	getUser,
 };

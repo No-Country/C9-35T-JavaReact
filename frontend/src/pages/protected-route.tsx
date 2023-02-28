@@ -7,7 +7,6 @@ function ProtectedRoute() {
 	const { isUserLoggedIn } = useAuth();
 
 	if (!isUserLoggedIn) {
-		console.log('User is not logged in');
 		return <Navigate to={Route.LOGIN} replace />;
 	}
 

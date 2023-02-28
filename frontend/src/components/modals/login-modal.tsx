@@ -28,7 +28,7 @@ function LoginModal() {
 				<Button>Ingresar</Button>
 				<p className='text-center text-sm font-medium text-neutral-500'>
 					¿Aún no tienes una cuenta?{' '}
-					<NavLink to={Route.REGISTER} className='font-semibold text-blue-600'>
+					<NavLink to={Route.REGISTER} className='font-semibold text-brand-accent'>
 						Crea una
 					</NavLink>
 				</p>

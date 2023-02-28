@@ -49,7 +49,7 @@ function RegisterModal() {
 				<Button className='col-span-2 w-full'>Registrarme</Button>
 				<p className='col-span-2 text-center text-sm font-medium text-neutral-500'>
 					¿Ya tienes una cuenta?{' '}
-					<NavLink to={Route.LOGIN} className='font-semibold text-blue-600'>
+					<NavLink to={Route.LOGIN} className='font-semibold text-brand-accent'>
 						Inicia sesión
 					</NavLink>
 				</p>

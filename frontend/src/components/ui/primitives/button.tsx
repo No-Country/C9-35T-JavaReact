@@ -1,14 +1,29 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+
 import { cn } from '~/utils/cn';
 
-interface Props extends ComponentPropsWithoutRef<'button'> {}
+const VARIANTS = {
+	primary: [
+		'border-brand-primary bg-transparent text-brand-primary',
+		'hover:bg-brand-primary hover:text-white',
+	],
+	secondary: [
+		'border-brand-accent bg-transparent text-brand-accent',
+		'hover:bg-brand-accent hover:text-white',
+	],
+};
 
-function Button({ children, className, ...props }: Props) {
+interface Props extends ComponentPropsWithoutRef<'button'> {
+	variant?: keyof typeof VARIANTS;
+}
+
+function Button({ children, variant = 'secondary', className, ...props }: Props) {
 	return (
 		<button
 			{...props}
 			className={cn(
-				'rounded-lg bg-neutral-500 px-6 py-3 text-sm font-medium text-white',
+				'rounded-full border-2 px-6 py-3 text-sm font-medium transition-colors',
+				VARIANTS[variant],
 				className
 			)}
 		>

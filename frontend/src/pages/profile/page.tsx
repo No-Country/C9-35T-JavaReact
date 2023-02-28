@@ -4,7 +4,11 @@ import { ArrowLeftIcon } from '~/components/ui/icons/outline';
 import Button from '~/components/ui/primitives/button';
 import TextField from '~/components/ui/primitives/text-field';
 
+import { useProfile } from './hooks/use-profile';
+
 function ProfilePage() {
+	const { register, errors, onSubmit } = useProfile();
+
 	return (
 		<section className='grid h-full w-full grid-rows-[auto_1fr]'>
 			<header className='w-full py-4 px-6'>
@@ -29,18 +33,63 @@ function ProfilePage() {
 							En esta sección podrás actualizar tu información personal.
 						</p>
 					</aside>
-					<form className='contents'>
+					<form onSubmit={onSubmit} className='contents'>
 						<section className='grid grid-cols-6 gap-6 md:col-span-2'>
-							<TextField label='Nombre' className='col-span-3' />
-							<TextField label='Apellidos' className='col-span-3' />
-							<TextField label='Correo electrónico' className='col-span-4' />
-							<TextField label='Teléfono' className='col-span-3' />
-							<TextField label='País' className='col-span-3' />
-							<TextField label='Dirección' className='col-span-6' />
-							<TextField label='Ciudad' className='col-span-2' />
-							<TextField label='Estado / Provincia' className='col-span-2' />
-							<TextField label='ZIP / Codigo postal' className='col-span-2' />
-							<Button className='col-span-2 col-start-5 self-end lg:col-span-1 lg:col-start-6'>
+							<TextField
+								label='Nombre'
+								className='col-span-3'
+								{...register('name')}
+								error={errors?.name?.message}
+							/>
+							<TextField
+								label='Apellidos'
+								className='col-span-3'
+								{...register('lastName')}
+								error={errors?.lastName?.message}
+							/>
+							<TextField
+								label='Correo electrónico'
+								className='col-span-4'
+								{...register('email')}
+								error={errors?.email?.message}
+							/>
+							<TextField
+								label='Teléfono'
+								className='col-span-3'
+								{...register('phone')}
+								error={errors?.phone?.message}
+							/>
+							<TextField
+								label='País'
+								className='col-span-3'
+								{...register('country')}
+								error={errors?.country?.message}
+							/>
+							<TextField
+								label='Dirección'
+								className='col-span-6'
+								{...register('address')}
+								error={errors?.address?.message}
+							/>
+							<TextField
+								label='Ciudad'
+								className='col-span-2'
+								{...register('city')}
+								error={errors?.city?.message}
+							/>
+							<TextField
+								label='Estado / Provincia'
+								className='col-span-2'
+								{...register('state')}
+								error={errors?.state?.message}
+							/>
+							<TextField
+								label='ZIP / Codigo postal'
+								className='col-span-2'
+								{...register('zipCode')}
+								error={errors?.zipCode?.message}
+							/>
+							<Button className='col-span-2 col-start-5 shrink-0 self-end lg:col-span-2 lg:col-start-5'>
 								Guardar
 							</Button>
 						</section>

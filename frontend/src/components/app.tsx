@@ -27,9 +27,8 @@ function App() {
 							<Route path={RouteName.REGISTER} element={<RegisterModal />} />
 						</Route>
 					</Route>
-					<Route element={<ProtectedRoute />}>
-						<Route path={RouteName.SHOPPING_CART} element={<CartPage />} />
-					</Route>
+					<Route element={<ProtectedRoute />}></Route>
+					<Route path={RouteName.SHOPPING_CART} element={<CartPage />} />
 					<Route path='/productos' element={<ProductsPage />} />
 					<Route path='/productos/:id' element={<ProductDetailPage />} />
 					<Route path='/search' element={<SearchPage />} />

@@ -26,10 +26,10 @@ function ShoppingCartDrawer() {
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
-				<button className='relative rounded-full p-2 text-neutral-600 transition-colors hover:bg-black/5'>
+				<button className='relative rounded-full p-2 text-neutral-300 transition-colors hover:bg-white/10'>
 					<ShoppingCartIcon />
 					{cartItemsCount > 0 && (
-						<span className='absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-neutral-500 text-[10px] font-bold text-white'>
+						<span className='absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-brown-800 text-[10px] font-bold text-white'>
 							{cartItemsCount}
 						</span>
 					)}

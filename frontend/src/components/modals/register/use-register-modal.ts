@@ -2,6 +2,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { authService } from '~/servicies/auth.service';
+
 const RegisterSchema = z
 	.object({
 		name: z.string().regex(/^[a-zA-ZÀ-ÿ\u00f1\u00d1\s']+$/, 'El nombre no es válido'),
@@ -30,7 +32,7 @@ const RegisterSchema = z
 		}
 	});
 
-type RegisterSchemaType = z.infer<typeof RegisterSchema>;
+export type RegisterSchemaType = z.infer<typeof RegisterSchema>;
 
 export function useRegisterModal() {
 	const {
@@ -42,7 +44,7 @@ export function useRegisterModal() {
 	});
 
 	const onSubmit = (data: RegisterSchemaType) => {
-		console.log(data);
+		authService.register(data);
 	};
 
 	return {

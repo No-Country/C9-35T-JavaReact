@@ -39,6 +39,12 @@ module.exports = {
 				'slide-down': 'slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)',
 				'slide-up': 'slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)',
 			},
+			backgroundImage: {
+				'living-background': "url('/src/assets/images/living.webp')",
+				'dining-background': "url('/src/assets/images/dining.webp')",
+				'studio-background': "url('/src/assets/images/studio.webp')",
+				'bedroom-background': "url('/src/assets/images/bedroom.webp')",
+			},
 		},
 	},
 	plugins: [],

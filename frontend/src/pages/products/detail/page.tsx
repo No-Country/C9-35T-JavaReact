@@ -38,12 +38,15 @@ function ProductDetailPage() {
 	}
 
 	return (
-		<div className='p-6'>
-			<figure className='aspect-square w-full rounded-lg bg-neutral-200'></figure>
-			<section className='mt-6 grid gap-4'>
+		<div className='mx-auto w-full max-w-7xl grid-cols-6 gap-6 p-6 lg:grid'>
+			<section className='col-span-3'>
+				<figure className='aspect-square w-full rounded-lg bg-neutral-200'></figure>
+			</section>
+
+			<section className='col-span-3 mt-6 flex flex-col gap-4'>
 				<h1 className='text-3xl font-bold tracking-tight'>{product.name}</h1>
 				<p className='text-3xl'>{currencyFormat(product.price)}</p>
-				<Button className='w-full' onClick={() => addToCart(product)}>
+				<Button className='w-full lg:w-auto lg:self-start' onClick={() => addToCart(product)}>
 					Añadir al carrito
 				</Button>
 				<p className='text-sm font-medium text-neutral-500'>{product.desc}</p>

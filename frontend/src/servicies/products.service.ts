@@ -1,3 +1,4 @@
+import { API_URL } from '~/constants';
 import type { Product } from '~/types';
 
 const products: Product[] = [
@@ -93,8 +94,13 @@ const products: Product[] = [
 	},
 ];
 
-function getAll(): Promise<Product[]> {
-	return Promise.resolve(products);
+async function getAll(): Promise<Product[]> {
+	let data = [];
+	try {
+		const response = await fetch(`${API_URL}/products/`);
+		data = await response.json();
+	} catch {}
+	return Promise.resolve(data);
 }
 
 function findByCategory(category: string): Promise<Product[]> {
