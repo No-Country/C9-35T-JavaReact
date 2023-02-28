@@ -30,8 +30,8 @@ public class OrderService implements IOrderService {
 
     @Override
     public ResponseEntity<?> getOrdersByUser(Long id) {
-        List<Order> order = iOrderRepository.findByUser_id(id);
-        List<OrderDto> ordersDto = order.stream().map(product -> mapper.getMapper().map(order, OrderDto.class)).collect(Collectors.toList());
+        List<Order> orders = iOrderRepository.findByUser_id(id);
+        List<OrderDto> ordersDto = orders.stream().map(order -> mapper.getMapper().map(order, OrderDto.class)).collect(Collectors.toList());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(ordersDto);
     }
 
@@ -39,8 +39,8 @@ public class OrderService implements IOrderService {
     @Override
     public ResponseEntity<?> getAllOrders() {
         List<Order> orders = iOrderRepository.findAll();
-        List<OrderDto> productsDto = orders.stream().map(product -> mapper.getMapper().map(product, OrderDto.class)).collect(Collectors.toList());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(productsDto);
+        List<OrderDto> ordersDto = orders.stream().map(order -> mapper.getMapper().map(order, OrderDto.class)).collect(Collectors.toList());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(ordersDto);
     }
 
     @Override

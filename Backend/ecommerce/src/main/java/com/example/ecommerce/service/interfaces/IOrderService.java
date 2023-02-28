@@ -1,7 +1,5 @@
 package com.example.ecommerce.service.interfaces;
-
 import com.example.ecommerce.model.Order;
-import com.example.ecommerce.model.Product;
 import org.springframework.http.ResponseEntity;
 
 public interface IOrderService {

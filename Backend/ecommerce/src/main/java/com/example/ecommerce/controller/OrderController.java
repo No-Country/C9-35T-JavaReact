@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
 
 
+
     @Autowired
     private IOrderService iOrderService;
 
@@ -26,17 +27,17 @@ public class OrderController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patchProduct(@PathVariable Long id, @RequestBody Order order) {
+    public ResponseEntity<?> patchOrder(@PathVariable Long id, @RequestBody Order order) {
         return iOrderService.patchOrder(id, order);
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> postProduct(@RequestBody Order order) {
+    public ResponseEntity<?> postOrder(@RequestBody Order order) {
         return iOrderService.postOrder(order);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
+    public ResponseEntity<?> deleteOrder(@PathVariable Long id) {
         return iOrderService.deleteOrder(id);
     }
 
