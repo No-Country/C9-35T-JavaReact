@@ -51,7 +51,13 @@ public class ItemService implements IItemService {
 
     @Override
     public ResponseEntity<?> postItem(Item item) {
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(iItemRepository.save(item));
+
+        if (item.getProduct().getStock()> item.getAmount())
+        {item.getProduct().setStock(item.getProduct().getStock() - item.getAmount());
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(iItemRepository.save(item));}
+        else
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Insufficient stock");
+
     }
 
     @Override
@@ -60,9 +66,14 @@ public class ItemService implements IItemService {
         itemToUpdate.setAmount (item.getAmount());
         itemToUpdate.setOrder(item.getOrder());
         itemToUpdate.setProduct(item.getProduct());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(iItemRepository.save(itemToUpdate));
-    }
+        itemToUpdate.getProduct().setStock(itemToUpdate.getProduct().getStock() - itemToUpdate.getAmount());
+        if (itemToUpdate.getProduct().getStock()> itemToUpdate.getAmount())
+        {itemToUpdate.getProduct().setStock(itemToUpdate.getProduct().getStock() - itemToUpdate.getAmount());
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(iItemRepository.save(itemToUpdate));}
+        else
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("insufficient stock");
 
+    }
     @Override
     public ResponseEntity<?> deleteItem(Long id) {
         Item itemToDelete = iItemRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Item not found"));
