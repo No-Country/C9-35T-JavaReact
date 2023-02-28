@@ -30,7 +30,7 @@ public class Offer {
     @Column(name = "endOffer")
     private Date endOffer;
 
-    @Column(name = "percentage")
+    @Column(name = "percentage", nullable = false)
     private Double percentage;
 
 }

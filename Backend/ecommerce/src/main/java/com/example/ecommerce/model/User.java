@@ -6,6 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,22 +34,20 @@ public class User {
     @Column(name = "lastName", nullable = false)
     private String lastName;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "address")
+    @Column(name = "address",nullable = false)
     private String address;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
-
+    @CreationTimestamp
     @Column(name = "creationDate")
     private Date creationDate;
 
+    @UpdateTimestamp
     @Column(name = "updateDate")
     private Date updateDate;
 
@@ -64,6 +67,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Review> reviews = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @OneToMany(mappedBy = "user")
     private Set<Shipment> shipments = new HashSet<>();

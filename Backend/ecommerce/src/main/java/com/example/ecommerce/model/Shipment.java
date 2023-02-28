@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
@@ -29,4 +31,12 @@ public class Shipment {
 
     @OneToOne
     private Order order;
+
+    @CreationTimestamp
+    @Column(name = "creationDate")
+    private Date creationDate;
+
+    @UpdateTimestamp
+    @Column(name = "updateDate")
+    private Date updateDate;
 }

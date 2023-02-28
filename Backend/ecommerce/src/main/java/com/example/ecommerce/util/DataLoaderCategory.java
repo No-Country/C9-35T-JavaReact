@@ -40,44 +40,44 @@ public class DataLoaderCategory implements CommandLineRunner {
         category = categoryService.postCategory(mapper.getMapper().map(category, CategoryDto.class)).getBody();
 
         Product product;
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").color("black").description("Silla negra").stock(50L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").price(400.0).color("black").description("Silla negra").stock(50L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").color("white").description("Silla blanca").stock(60L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").price(400.0).color("white").description("Silla blanca").stock(60L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Mesa linda").color("black").description("Mesa negra").stock(70L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Mesa linda").price(400.0).color("black").description("Mesa negra").stock(70L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Mesa linda").color("white").description("Mesa blanca").stock(80L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Mesa linda").price(400.0).color("white").description("Mesa blanca").stock(80L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Alacena linda").color("black").description("Alacena negra").stock(90L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Alacena linda").price(400.0).color("black").description("Alacena negra").stock(90L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Alacena fea").color("white").description("Alacena blanca").stock(100L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Alacena fea").price(400.0).color("white").description("Alacena blanca").stock(100L).build();
         productService.postProduct(product);
 
 
         category = Category.builder().name("Comedor").description("Muebles para el comedor").build();
         category = categoryService.postCategory(mapper.getMapper().map(category, CategoryDto.class)).getBody();
 
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").color("black").description("Silla negra").stock(50L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").price(400.0).color("black").description("Silla negra").stock(50L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").color("white").description("Silla blanca").stock(60L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").price(400.0).color("white").description("Silla blanca").stock(60L).build();
         productService.postProduct(product);
 
 
         category = Category.builder().name("Estudio").description("Muebles de oficina").build();
         category = categoryService.postCategory(mapper.getMapper().map(category, CategoryDto.class)).getBody();
 
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").color("black").description("Silla negra").stock(50L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").price(400.0).color("black").description("Silla negra").stock(50L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").color("white").description("Silla blanca").stock(60L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").price(400.0).color("white").description("Silla blanca").stock(60L).build();
         productService.postProduct(product);
 
 
         category = Category.builder().name("Dormitorio").description("Muebles para el dormitorio").build();
         category = categoryService.postCategory(mapper.getMapper().map(category, CategoryDto.class)).getBody();
 
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").color("black").description("Silla negra").stock(50L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla linda").price(400.0).color("black").description("Silla negra").stock(50L).build();
         productService.postProduct(product);
-        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").color("white").description("Silla blanca").stock(60L).build();
+        product = Product.builder().category(mapper.getMapper().map(category, Category.class)).name("Silla fea").price(400.0).color("white").description("Silla blanca").stock(60L).build();
         productService.postProduct(product);
     }
 

@@ -2,7 +2,10 @@ package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,20 +23,28 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     private String name;
 
-    @Column(name = "price")
+    @Column(name = "price",nullable = false)
     private Double price;
 
-    @Column(name = "description")
+    @Column(name = "description",nullable = false)
     private String description;
 
-    @Column(name = "stock")
+    @Column(name = "stock",nullable = false)
     private Long stock;
 
-    @Column(name = "color")
+    @Column(name = "color",nullable = false)
     private String color;
+
+    @CreationTimestamp
+    @Column(name = "creationDate")
+    private Date creationDate;
+
+    @UpdateTimestamp
+    @Column(name = "updateDate")
+    private Date updateDate;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "category_id")

@@ -22,7 +22,7 @@ public class Order {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "orderDate")
+    @Column(name = "orderDate", nullable = false)
     private Date orderDate;
 
     @Column(name = "paymentMethod")
