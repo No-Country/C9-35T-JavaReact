@@ -1,5 +1,6 @@
 package com.example.ecommerce.dto;
 
+import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,4 +20,15 @@ public class UserDto {
 
     private String address;
 
+    private String country;
+
+    private String province;
+
+    private Long zipCode;
+
+    private String city;
+
+    private String phone;
+
+    private String avatar;
 }

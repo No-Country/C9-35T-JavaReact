@@ -84,6 +84,7 @@ public class AuthorizationService implements IAuthorizationService {
 
     public ResponseEntity<?> createNewUser(UserDto requestUserDto, RoleName roleName) {
         User user = mapper.getMapper().map(requestUserDto, User.class);
+        user.setAvatar("https://unavatar.io/" + requestUserDto.getEmail());
         user.setPassword(passwordEncoder.encode(requestUserDto.getPassword()));
         try {
             Role role = roleService.findByName(roleName);

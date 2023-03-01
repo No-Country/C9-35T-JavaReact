@@ -14,5 +14,16 @@ public class ResponseUserDto {
     private String email;
 
     private String token;
-    
+
+    private String country;
+
+    private String province;
+
+    private Long zipCode;
+
+    private String city;
+
+    private String phone;
+
+    private String avatar;
 }

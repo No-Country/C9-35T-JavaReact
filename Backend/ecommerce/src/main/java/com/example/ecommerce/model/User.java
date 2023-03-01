@@ -10,7 +10,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -37,11 +36,29 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "address",nullable = false)
+    @Column(name = "address", nullable = false)
     private String address;
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "province")
+    private String province;
+
+    @Column(name = "zip_code")
+    private Long zipCode;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "phone", nullable = false)
+    private String phone;
+
+    @Column(name = "avatar")
+    private String avatar;
 
     @CreationTimestamp
     @Column(name = "creationDate")

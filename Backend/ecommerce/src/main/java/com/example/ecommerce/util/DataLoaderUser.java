@@ -32,6 +32,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("cachete@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("12345")
+                .avatar("https://unavatar.io/")
                 .build();
         authorizationService.save(user);
 
@@ -41,6 +43,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("tagliafico@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("12345")
+                .avatar("https://unavatar.io/")
                 .build();
         authorizationService.save(user);
 
@@ -50,6 +54,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("laarania@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -59,6 +65,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("dybala@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -68,6 +76,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("montiel@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -77,6 +87,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("molina@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -86,6 +98,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("otamendi@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -95,6 +109,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("depaul@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -104,6 +120,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("cuti@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -113,6 +131,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("licha@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -124,6 +144,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("dibu@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.save(user);
 
@@ -133,6 +155,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("lapulga@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -142,6 +166,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("huevo@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -151,6 +177,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("macallister@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -160,6 +188,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("enzo@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -169,6 +199,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("paredes@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -178,6 +210,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("eltoro@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -187,6 +221,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("fideo@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -196,6 +232,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("correa@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
@@ -205,6 +243,8 @@ public class DataLoaderUser implements CommandLineRunner {
                 .email("palacios@gmail.com")
                 .password("password")
                 .address("Calle falsa 123")
+                .phone("123456")
+                .avatar("")
                 .build();
         authorizationService.saveAdmin(user);
 
