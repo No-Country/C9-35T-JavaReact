@@ -25,11 +25,6 @@ public class UserController {
         return iUserService.getUser(id);
     }
 
-    @PostMapping("/")
-    public ResponseEntity<?> postUser(@RequestBody User user) {
-        return iUserService.postUser(user);
-    }
-
     @PatchMapping("/{id}")
     public ResponseEntity<?> patchUser(@RequestBody User user, @PathVariable Long id) {
         return iUserService.updateUser(id, user);

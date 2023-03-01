@@ -143,7 +143,7 @@ public class ProductService implements IProductService {
 
     public void setOfferAvailability(List<Product> products) {
         for (Product product : products) {
-            if (product.getOffer().getEndOffer().after(new Date())) {
+            if (product.getOffer() != null && product.getOffer().getEndOffer().after(new Date())) {
                 iOfferRepository.delete(product.getOffer());
             }
         }

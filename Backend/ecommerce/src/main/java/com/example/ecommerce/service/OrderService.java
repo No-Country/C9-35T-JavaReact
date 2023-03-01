@@ -1,6 +1,7 @@
 package com.example.ecommerce.service;
 
 import com.example.ecommerce.dto.OrderDto;
+import com.example.ecommerce.dto.OrderPatchDto;
 import com.example.ecommerce.exception.ResourceNotFoundException;
 import com.example.ecommerce.mapper.Mapper;
 import com.example.ecommerce.model.Order;
@@ -49,10 +50,8 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public ResponseEntity<?> patchOrder(Long id, Order order) {
+    public ResponseEntity<?> patchOrder(Long id, OrderPatchDto order) {
         Order orderToUpdate = iOrderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order not found"));
-        orderToUpdate.setOrderDate(order.getOrderDate());
-        orderToUpdate.setPaymentMethod(order.getPaymentMethod());
         orderToUpdate.setState(order.getState());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(iOrderRepository.save(orderToUpdate));
     }

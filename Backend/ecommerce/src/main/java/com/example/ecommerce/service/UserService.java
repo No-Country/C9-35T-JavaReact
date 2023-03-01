@@ -51,10 +51,6 @@ public class UserService implements IUserService {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(mapper.getMapper().map(user, ResponseUserDto.class));
     }
 
-    @Override
-    public ResponseEntity<Object> postUser(User user) {
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(iUserRepository.save(user));
-    }
 
     @Override
     public ResponseEntity<?> deleteUser(Long id, String token) {
@@ -73,12 +69,4 @@ public class UserService implements IUserService {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(iUserRepository.save(userToUpdate));
     }
 
-    @Override
-    public User findLoggedUser(String token) throws UserNotLoggedException {
-        User user = iUserRepository.findByEmail(jwtService.extractUserEmail(token));
-        if (user == null) {
-            throw new UserNotLoggedException("User not logged");
-        }
-        return user;
-    }
 }

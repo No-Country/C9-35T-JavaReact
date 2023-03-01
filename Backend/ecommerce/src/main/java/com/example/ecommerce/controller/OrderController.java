@@ -1,5 +1,6 @@
 package com.example.ecommerce.controller;
 
+import com.example.ecommerce.dto.OrderPatchDto;
 import com.example.ecommerce.model.Order;
 import com.example.ecommerce.service.interfaces.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 public class OrderController {
 
-
-
     @Autowired
     private IOrderService iOrderService;
 
@@ -22,12 +21,12 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getOrdersById(@PathVariable Long id) {
+    public ResponseEntity<?> getOrderById(@PathVariable Long id) {
         return iOrderService.getOrder(id);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patchOrder(@PathVariable Long id, @RequestBody Order order) {
+    public ResponseEntity<?> patchOrder(@PathVariable Long id, @RequestBody OrderPatchDto order) {
         return iOrderService.patchOrder(id, order);
     }
 
