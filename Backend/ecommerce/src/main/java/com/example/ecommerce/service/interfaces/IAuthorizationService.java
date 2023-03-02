@@ -1,6 +1,7 @@
 package com.example.ecommerce.service.interfaces;
 
 import com.example.ecommerce.dto.LoginUserDto;
+import com.example.ecommerce.dto.PatchUserDto;
 import com.example.ecommerce.dto.ResponseUserDto;
 import com.example.ecommerce.dto.UserDto;
 import com.example.ecommerce.exception.ResourceNotFoundException;
@@ -15,9 +16,9 @@ public interface IAuthorizationService {
 
     ResponseEntity<?> save(UserDto requestUserDto);
 
-    ResponseEntity<?> saveAdmin( UserDto requestUserDto) throws SQLIntegrityConstraintViolationException;
+    ResponseEntity<?> saveAdmin(UserDto requestUserDto) throws SQLIntegrityConstraintViolationException;
 
-    UserDto update( UserDto requestUserDto);
+    PatchUserDto update(PatchUserDto patchUserDto);
 
     UserDto findByEmail(String email) throws ResourceNotFoundException;
 

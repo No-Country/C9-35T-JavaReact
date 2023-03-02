@@ -23,4 +23,6 @@ public class ResponseOrderDto {
 
     private Set<Product> products;
 
+    private Set<ItemDto> items;
+
 }

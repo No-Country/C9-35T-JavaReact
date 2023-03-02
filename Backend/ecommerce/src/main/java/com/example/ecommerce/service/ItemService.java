@@ -38,10 +38,10 @@ public class ItemService implements IItemService {
 
     @Override
     public ResponseEntity<?> getItemsByOrder(Long id) {
-//        List<Item> items = iItemRepository.findByOrder_id(id);
+        List<Item> items = iItemRepository.findByOrder_id(id);
 //        List<ItemDto> itemsDto = items.stream().map(item -> mapper.getMapper().map(item, ItemDto.class)).collect(Collectors.toList());
-//        return ResponseEntity.status(HttpStatus.ACCEPTED).body(itemsDto);
-        return null;
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(items);
+
     }
 
     @Override
