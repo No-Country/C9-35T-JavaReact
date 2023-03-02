@@ -1,5 +1,6 @@
 package com.example.ecommerce.controller;
 
+import com.example.ecommerce.dto.OrderDto;
 import com.example.ecommerce.dto.OrderPatchDto;
 import com.example.ecommerce.model.Order;
 import com.example.ecommerce.service.interfaces.IOrderService;
@@ -31,7 +32,7 @@ public class OrderController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> postOrder(@RequestBody Order order) {
+    public ResponseEntity<?> postOrder(@RequestBody OrderDto order) {
         return iOrderService.postOrder(order);
     }
 

@@ -8,6 +8,6 @@ import java.util.List;
 //@Repository
 public interface IItemRepository extends JpaRepository<Item, Long>
 {
-    List<Item> findByOrder_id(Long id);
-    List<Item> findByProduct_id(Long id);
+//    List<Item> findByOrder_id(Long id);
+//    List<Item> findByProduct_id(Long id);
 }

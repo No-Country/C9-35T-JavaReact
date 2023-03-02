@@ -117,18 +117,22 @@ public class AuthorizationService implements IAuthorizationService {
     }
 
     @Override
-    public UserDto update(UserDto requestUserDto) {
+    public UserDto update(UserDto userDto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (!(Objects.equals(userRepository.findByEmail(auth.getName()).getId(), userRepository.findByEmail(requestUserDto.getEmail()).getId()))) {
+        if (!(Objects.equals(userRepository.findByEmail(auth.getName()).getId(), userRepository.findByEmail(userDto.getEmail()).getId()))) {
             throw new AccessDeniedException("You can not modify another user´s details");
         }
-        User user = userRepository.findByEmail(requestUserDto.getEmail());
+        User user = userRepository.findByEmail(userDto.getEmail());
 
-        user.setUpdateDate(new Date());
-        user.setPassword(passwordEncoder.encode(requestUserDto.getPassword()));
-        user.setFirstName(requestUserDto.getFirstName());
-        user.setLastName(requestUserDto.getLastName());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setEmail(user.getEmail());
+        user.setAddress(userDto.getAddress());
+        user.setCity(userDto.getCity());
+        user.setCountry(userDto.getCountry());
+        user.setPhone(userDto.getPhone());
 
         User userUpdated = userRepository.save(user);
 
@@ -161,8 +165,10 @@ public class AuthorizationService implements IAuthorizationService {
             } else {
                 throw new ResourceNotFoundException("User not found");
             }
+            ResponseUserDto user = mapper.getMapper().map(userRepository.findByEmail(loginUser.getEmail()), ResponseUserDto.class);
             String token = this.authenticate(loginUser.getEmail(), loginUser.getPassword());
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(new AuthToken(token));
+            user.setToken(token);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(user);
         } catch (UserNotAllowedException | ResourceNotFoundException e) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
         }

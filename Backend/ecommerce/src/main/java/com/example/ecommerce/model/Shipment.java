@@ -29,7 +29,7 @@ public class Shipment {
     @ManyToOne
     private User user;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Order order;
 
     @CreationTimestamp

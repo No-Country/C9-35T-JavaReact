@@ -39,10 +39,10 @@ public class UserService implements IUserService {
     private CustomUserDetailsService customUserDetailsService;
 
     @Override
-    public ResponseEntity<List<UserDto>> getAll() {
+    public ResponseEntity<?> getAll() {
         List<User> users = iUserRepository.findAll();
-        List<UserDto> usersDto = users.stream().map(user -> mapper.getMapper().map(user, UserDto.class)).collect(Collectors.toList());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(usersDto);
+//        List<UserDto> usersDto = users.stream().map(user -> mapper.getMapper().map(user, UserDto.class)).collect(Collectors.toList());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(users);
     }
 
     @Override

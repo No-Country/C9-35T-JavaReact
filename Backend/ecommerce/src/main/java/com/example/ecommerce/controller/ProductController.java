@@ -72,7 +72,7 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<?> getProductBySearch(@RequestBody String search) {
+    public ResponseEntity<?> getProductBySearch(@RequestParam String search) {
         return iProductService.getProductsBySearch(search);
     }
 }

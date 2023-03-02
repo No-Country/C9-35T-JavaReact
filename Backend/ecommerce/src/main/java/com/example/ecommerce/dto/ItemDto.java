@@ -11,5 +11,5 @@ public class ItemDto {
     private Long id;
     private Long amount;
     private Product product;
-    private Order order;
+
 }

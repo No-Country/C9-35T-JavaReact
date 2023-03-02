@@ -1,5 +1,7 @@
 package com.example.ecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -61,8 +63,9 @@ public class Product {
     @OneToOne(mappedBy = "product")
     private Post post;
 
-    @OneToMany(mappedBy = "product")
-    private Set<Item> items = new HashSet<>();
+    @JsonIgnore
+    @ManyToMany(mappedBy = "products",fetch = FetchType.LAZY)
+    private Set<Order> orders = new HashSet<>();
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval=true)
     private Offer offer;
