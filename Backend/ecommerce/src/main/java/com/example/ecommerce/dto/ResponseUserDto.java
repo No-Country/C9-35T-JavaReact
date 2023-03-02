@@ -1,8 +1,12 @@
 package com.example.ecommerce.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class ResponseUserDto {
 
     private Long id;

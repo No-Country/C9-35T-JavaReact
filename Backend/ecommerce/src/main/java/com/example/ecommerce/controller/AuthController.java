@@ -25,9 +25,6 @@ import java.sql.SQLIntegrityConstraintViolationException;
 public class AuthController {
 
     @Autowired
-    private JwtUtil jwtUtil;
-
-    @Autowired
     private IAuthorizationService iAuthorizationService;
 
 

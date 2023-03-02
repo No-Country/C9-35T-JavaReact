@@ -2,10 +2,9 @@ package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,22 +12,26 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Builder
 public class Item {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @EmbeddedId
+    private ItemId id;
 
     @Column(name = "amount")
     private Long amount;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @Embeddable
+    @Getter
+    @Setter
+    public static class ItemId implements Serializable {
+        @Column(name = "order_id")
+        private Long orderId;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+        @Column(name = "product_id")
+        private Long productId;
+
+
+    }
 
 }

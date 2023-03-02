@@ -1,16 +1,16 @@
 package com.example.ecommerce.dto;
 
-import com.example.ecommerce.model.Item;
+import com.example.ecommerce.model.Product;
 import com.example.ecommerce.model.State;
 import com.example.ecommerce.model.User;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
 @Data
-public class OrderDto {
+public class ResponseOrderDto {
+
     private Long id;
 
     private Date orderDate;
@@ -21,6 +21,6 @@ public class OrderDto {
 
     private State state;
 
-    private Set<ItemDto> items;
+    private Set<Product> products;
 
 }

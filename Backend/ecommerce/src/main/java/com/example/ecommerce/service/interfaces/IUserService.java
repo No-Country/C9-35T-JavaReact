@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface IUserService {
-    ResponseEntity<List<UserDto>> getAll();
+    ResponseEntity<?> getAll();
 
     ResponseEntity<?> getUser(Long id);
 
