@@ -35,6 +35,9 @@ public class Order {
     @Column(name = "paymentMethod")
     private String paymentMethod;
 
+    @Column(name = "shipment_provider")
+    private String shipmentProvider;
+
     @ManyToOne
     @JoinColumn(name = "state_id")
     private State state;

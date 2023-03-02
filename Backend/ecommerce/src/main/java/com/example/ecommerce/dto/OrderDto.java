@@ -22,5 +22,7 @@ public class OrderDto {
     private State state;
 
     private Set<ItemDto> items;
+    
+    private String shipmentProvider;
 
 }

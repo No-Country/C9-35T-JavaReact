@@ -25,4 +25,5 @@ public class ResponseOrderDto {
 
     private Set<ItemDto> items;
 
+    private String shipmentProvider;
 }
