@@ -39,7 +39,6 @@ public class Order {
     @JoinColumn(name = "state_id")
     private State state;
 
-    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "items",

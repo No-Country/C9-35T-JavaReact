@@ -42,6 +42,7 @@ public class OrderService implements IOrderService {
 
     public ResponseEntity<?> getOrder(Long id) {
         Order order = iOrderRepository.findById(id).orElseThrow();
+
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(mapper.getMapper().map(order, ResponseOrderDto.class));
 //        return ResponseEntity.status(HttpStatus.ACCEPTED).body(order);
     }

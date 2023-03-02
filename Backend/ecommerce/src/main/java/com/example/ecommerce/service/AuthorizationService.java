@@ -1,9 +1,6 @@
 package com.example.ecommerce.service;
 
-import com.example.ecommerce.dto.AuthToken;
-import com.example.ecommerce.dto.LoginUserDto;
-import com.example.ecommerce.dto.ResponseUserDto;
-import com.example.ecommerce.dto.UserDto;
+import com.example.ecommerce.dto.*;
 import com.example.ecommerce.exception.ResourceFoundException;
 import com.example.ecommerce.exception.ResourceNotFoundException;
 import com.example.ecommerce.exception.UserNotAllowedException;
@@ -117,26 +114,28 @@ public class AuthorizationService implements IAuthorizationService {
     }
 
     @Override
-    public UserDto update(UserDto userDto) {
+    public PatchUserDto update(PatchUserDto patchUserDto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        if (!(Objects.equals(userRepository.findByEmail(auth.getName()).getId(), userRepository.findByEmail(userDto.getEmail()).getId()))) {
+        if (!(Objects.equals(userRepository.findByEmail(auth.getName()).getId(), userRepository.findByEmail(patchUserDto.getEmail()).getId()))) {
             throw new AccessDeniedException("You can not modify another user´s details");
         }
-        User user = userRepository.findByEmail(userDto.getEmail());
+        User user = userRepository.findByEmail(patchUserDto.getEmail());
 
-        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        user.setFirstName(userDto.getFirstName());
-        user.setLastName(userDto.getLastName());
+        user.setPassword(passwordEncoder.encode(patchUserDto.getPassword()));
+        user.setFirstName(patchUserDto.getFirstName());
+        user.setLastName(patchUserDto.getLastName());
         user.setEmail(user.getEmail());
-        user.setAddress(userDto.getAddress());
-        user.setCity(userDto.getCity());
-        user.setCountry(userDto.getCountry());
-        user.setPhone(userDto.getPhone());
+        user.setAddress(patchUserDto.getAddress());
+        user.setCity(patchUserDto.getCity());
+        user.setCountry(patchUserDto.getCountry());
+        user.setPhone(patchUserDto.getPhone());
+        user.setZipCode(patchUserDto.getZipCode());
+        user.setProvince(patchUserDto.getProvince());
 
         User userUpdated = userRepository.save(user);
 
-        return mapper.getMapper().map(userUpdated, UserDto.class);
+        return mapper.getMapper().map(userUpdated, PatchUserDto.class);
 
     }
 

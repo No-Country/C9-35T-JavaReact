@@ -3,6 +3,7 @@ package com.example.ecommerce.controller;
 import com.example.ecommerce.dto.OrderDto;
 import com.example.ecommerce.dto.OrderPatchDto;
 import com.example.ecommerce.model.Order;
+import com.example.ecommerce.service.interfaces.IItemService;
 import com.example.ecommerce.service.interfaces.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,9 @@ public class OrderController {
 
     @Autowired
     private IOrderService iOrderService;
+
+    @Autowired
+    private IItemService iItemService;
 
     @GetMapping("/")
     public ResponseEntity<?> getOrders() {
@@ -29,6 +33,11 @@ public class OrderController {
     @PatchMapping("/{id}")
     public ResponseEntity<?> patchOrder(@PathVariable Long id, @RequestBody OrderPatchDto order) {
         return iOrderService.patchOrder(id, order);
+    }
+
+    @GetMapping("/items/{id}")
+    public ResponseEntity<?> getItemsByOrderId(@PathVariable Long id) {
+        return iItemService.getItemsByOrder(id);
     }
 
     @PostMapping("/")

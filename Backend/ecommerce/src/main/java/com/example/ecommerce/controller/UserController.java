@@ -1,6 +1,8 @@
 package com.example.ecommerce.controller;
 
+import com.example.ecommerce.dto.PatchUserDto;
 import com.example.ecommerce.model.User;
+import com.example.ecommerce.service.interfaces.IAuthorizationService;
 import com.example.ecommerce.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,9 @@ public class UserController {
     @Autowired
     private IUserService iUserService;
 
+    @Autowired
+    private IAuthorizationService iAuthorizationService;
+
     @GetMapping("/")
     public ResponseEntity<?> getAllUsers() {
         return iUserService.getAll();
@@ -25,9 +30,9 @@ public class UserController {
         return iUserService.getUser(id);
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity<?> patchUser(@RequestBody User user, @PathVariable Long id) {
-        return iUserService.updateUser(id, user);
+    @PatchMapping("/patch")
+    public ResponseEntity<?> patchUser(@RequestBody PatchUserDto user) {
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(iAuthorizationService.update(user));
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
