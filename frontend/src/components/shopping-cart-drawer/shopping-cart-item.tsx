@@ -13,7 +13,7 @@ function ShoppingCartItem({ id, name, image, price, quantity }: ShoppoingCartPro
 		<article className='grid grid-cols-[auto_1fr] gap-4 rounded-xl border border-neutral-300/70 p-4'>
 			<figure className='aspect-square w-16 rounded-lg bg-neutral-200'>
 				<img
-					src={`data:image/jpeg;base64,${image.dataBase64}`}
+					src={`data:image/jpeg;base64,${image?.dataBase64}`}
 					alt={name}
 					className='h-full w-full object-cover'
 				/>

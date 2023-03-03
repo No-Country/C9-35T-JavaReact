@@ -118,7 +118,15 @@ async function findByCategory(category: string): Promise<Product[]> {
 	try {
 		const categoryId = CategoryDict[category as keyof typeof CategoryDict];
 		const response = await fetch(`${API_URL}/products/category/${categoryId}`);
-		const products: Product[] = await response.json();
+		const data: Product[] = await response.json();
+		const promises = data.map(async product => {
+			const response = await fetch(`${API_URL}/images/product/${product.id}`);
+			const [image]: { name: string; dataBase64: string }[] = await response.json();
+			product.image = image;
+			return product;
+		});
+
+		const products = await Promise.all(promises);
 		return products;
 	} catch {
 		return [];
@@ -129,12 +137,25 @@ async function findByCategory(category: string): Promise<Product[]> {
 async function findById(id: string): Promise<Product> {
 	const response = await fetch(`${API_URL}/products/${id}`);
 	const product: Product = await response.json();
+
+	const responseImage = await fetch(`${API_URL}/images/product/${product.id}`);
+	const [image]: { name: string; dataBase64: string }[] = await responseImage.json();
+	product.image = image;
+
 	return product;
 }
 
 async function search(query: string): Promise<Product[]> {
 	const response = await fetch(`${API_URL}/products/search?search=` + query);
-	const products: Product[] = await response.json();
+	const data: Product[] = await response.json();
+	const promises = data.map(async product => {
+		const response = await fetch(`${API_URL}/images/product/${product.id}`);
+		const [image]: { name: string; dataBase64: string }[] = await response.json();
+		product.image = image;
+		return product;
+	});
+
+	const products = await Promise.all(promises);
 	return products;
 	// return Promise.resolve(
 	// 	products.filter(product => {

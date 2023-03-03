@@ -42,7 +42,7 @@ function ProductDetailPage() {
 			<section className='col-span-3'>
 				<figure className='aspect-square w-full rounded-lg bg-neutral-200'>
 					<img
-						src={`data:image/jpeg;base64,${product.image.dataBase64}`}
+						src={`data:image/jpeg;base64,${product?.image?.dataBase64}`}
 						alt={product.name}
 						className='h-full w-full object-cover'
 					/>
