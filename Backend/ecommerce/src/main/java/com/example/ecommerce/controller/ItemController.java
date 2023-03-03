@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/items")
-
+@CrossOrigin("*")
 public class ItemController {
 
 

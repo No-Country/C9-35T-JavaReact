@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @RestController
 @RequestMapping("/images")
+@CrossOrigin("*")
 public class ImageController {
 
     @Autowired

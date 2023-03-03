@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2eac2df6-3dbc-417b-b93a-40d9da97b648" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/repository/IImageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/interfaces/IImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/service/interfaces/IImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/src/main/java/com/example/ecommerce/util/DataLoaderCategory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
