@@ -33,4 +33,9 @@ public class ImageService implements IImageService {
         image.setProduct(product);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(iImageRepository.save(image));
     }
+
+    @Override
+    public ResponseEntity<?> getProductImages(Long id) {
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(iImageRepository.findByProduct_id(id));
+    }
 }

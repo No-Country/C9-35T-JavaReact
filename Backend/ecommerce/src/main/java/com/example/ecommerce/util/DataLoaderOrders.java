@@ -53,13 +53,13 @@ public class DataLoaderOrders implements CommandLineRunner {
         state = State.builder().name(OrderState.PENDIENTE_PAGO).description("Pendiente de pago").build();
         state = stateRepository.save(state);
 
-        state = State.builder().name(OrderState.EN_CAMINO).description("Pendiente de pago").build();
+        state = State.builder().name(OrderState.EN_CAMINO).description("En camino").build();
         state = stateRepository.save(state);
 
-        state = State.builder().name(OrderState.RECHAZADO).description("Pendiente de pago").build();
+        state = State.builder().name(OrderState.RECHAZADO).description("Rechazado").build();
         state = stateRepository.save(state);
 
-        state = State.builder().name(OrderState.FINALIZADO).description("Pendiente de pago").build();
+        state = State.builder().name(OrderState.FINALIZADO).description("Entregado").build();
         state = stateRepository.save(state);
         UserDto userDto;
         userDto = UserDto.builder()
