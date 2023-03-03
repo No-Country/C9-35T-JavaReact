@@ -43,6 +43,13 @@ Un estilo que no solo habla de la identidad de la firma, sino también de su ide
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="https://hibernate.org/">Hibernate</a>
 
+## 📦 Entregables
+
+- ⚙️ [API Backend](https://nocountry-35-production.up.railway.app/)
+- 💻 [Frontend](https://reliable-faun-c55588.netlify.app/)
+- 🎨 [Diseño](https://www.figma.com/file/PGZmhZR3q3YsUVa1FjbYp4/Ecommerce-Muebler%C3%ADa?node-id=0%3A1&t=R98oDnaIUieWI5VN-0)
+
+
 ## 🧑‍🤝‍🧑 Integrantes
 
 <table width="100%">
