@@ -7,6 +7,7 @@ import HelpPage from '~/pages/help/page';
 import HomePage from '~/pages/home/page';
 import ProductDetailPage from '~/pages/products/detail/page';
 import ProductsPage from '~/pages/products/page';
+import OrderPage from '~/pages/profile/orders/page';
 import ProfilePage from '~/pages/profile/page';
 import ProtectedRoute from '~/pages/protected-route';
 import RedirectIfLoggedRoute from '~/pages/redirect-if-logged-route';
@@ -27,11 +28,13 @@ function App() {
 							<Route path={RouteName.REGISTER} element={<RegisterModal />} />
 						</Route>
 					</Route>
-					<Route element={<ProtectedRoute />}></Route>
-					<Route path={RouteName.SHOPPING_CART} element={<CartPage />} />
-					<Route path='/productos' element={<ProductsPage />} />
+					<Route element={<ProtectedRoute />}>
+						<Route path={RouteName.SHOPPING_CART} element={<CartPage />} />
+						<Route path={RouteName.ORDERS} element={<OrderPage />} />
+					</Route>
+					<Route path={RouteName.PRODUCTS} element={<ProductsPage />} />
 					<Route path='/productos/:id' element={<ProductDetailPage />} />
-					<Route path='/search' element={<SearchPage />} />
+					<Route path={RouteName.SEARCH} element={<SearchPage />} />
 				</Route>
 				<Route element={<ProtectedRoute />}>
 					<Route path={RouteName.PROFILE} element={<ProfilePage />} />

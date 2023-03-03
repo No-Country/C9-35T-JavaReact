@@ -8,7 +8,13 @@ function Product({ ...product }: ProductType) {
 	return (
 		<Link to={{ pathname: `${Route.PRODUCTS}/${product.id}` }} state={{ product }}>
 			<article className='rounded-xl border border-black/5 bg-white p-2 shadow-sm'>
-				<figure className='aspect-square rounded-lg bg-black/10'></figure>
+				<figure className='aspect-square rounded-lg bg-black/10'>
+					<img
+						src={`data:image/jpeg;base64,${product.image.dataBase64}`}
+						alt={product.name}
+						className='h-full w-full object-cover'
+					/>
+				</figure>
 				<section className='py-2'>
 					<header className='flex flex-col gap-1'>
 						{product.stock > 0 ? (

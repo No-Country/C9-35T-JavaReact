@@ -16,9 +16,9 @@ function ProductsPage() {
 	}, [category]);
 
 	return (
-		<div>
+		<div className='mb-12'>
 			<header className='mx-auto w-full max-w-7xl p-6 xl:px-0'>
-				<h1 className='text-6xl font-black capitalize tracking-tight'>{category}</h1>
+				<h1 className='text-4xl font-black capitalize tracking-tight'>{category}</h1>
 				<p className='text-sm font-medium text-neutral-500'>
 					{products.length} {products.length > 1 ? 'resultados' : 'resultado'}
 				</p>

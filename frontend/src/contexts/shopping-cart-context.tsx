@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useEffect, useReducer } from 'react';
 
-import { Product, ShoppoingCartProduct } from '~/types';
+import type { Product, ShoppoingCartProduct } from '~/types';
 
 type ShoppingCartContextType = {
 	addToCart: (product: Product) => void;

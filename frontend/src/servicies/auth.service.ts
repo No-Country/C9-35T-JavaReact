@@ -11,22 +11,41 @@ async function login({ email, password }: AuthCredentials) {
 		body: JSON.stringify({ email, password }),
 	});
 
-	const { token, user } = await response.json();
+	const data = await response.json();
+	const { token, ...user } = data;
 
 	return { token, user };
 }
 
-async function register({ email, password, name, lastName, phone, bornDate }: RegisterSchemaType) {
+async function register({ email, password, firstName, lastName, phone }: RegisterSchemaType) {
 	const response = await fetch(`${API_URL}/auth/signUp`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({ email, password, name, lastName, phone, bornDate }),
+		body: JSON.stringify({
+			email,
+			password,
+			firstName,
+			lastName,
+			phone,
+			address: '',
+			country: null,
+			province: null,
+			zipCode: null,
+			city: null,
+			avatar: null,
+		}),
 	});
 
-	const data = await response.json();
-	console.log(data);
+	const { statusCodeValue, body: data } = await response.json();
+	if (statusCodeValue === 400) {
+		throw new Error(data.message);
+	}
+
+	const { token, ...user } = data;
+
+	return { token, user };
 }
 
 async function logout() {
@@ -37,7 +56,7 @@ async function logout() {
 	}
 }
 
-async function getUser({ token, userId }: { token: string; userId: number }) {
+async function getUser({ token, userId }: { token: string; userId: string }) {
 	const response = await fetch(`${API_URL}/users/${userId}`, {
 		method: 'GET',
 		headers: {

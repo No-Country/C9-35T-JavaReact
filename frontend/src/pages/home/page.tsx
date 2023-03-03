@@ -26,7 +26,13 @@ function HomePage() {
 	return (
 		<>
 			<main className='flex h-full w-full flex-col items-center'>
-				<header className='h-80 w-full overflow-hidden bg-neutral-200/70 lg:h-[512px]'></header>
+				<header className='h-80 w-full overflow-hidden bg-neutral-200/70 lg:h-[512px]'>
+					<img
+						src='/images/hero-image.webp'
+						alt=''
+						className='h-full w-full object-cover object-center'
+					/>
+				</header>
 				<section className='flex w-full max-w-7xl items-center gap-6 p-6'>
 					<Link to={`${Route.PRODUCTS}?categoria=sala`}>
 						<CategoryItem name='Sala' icon={LivingIcon} />

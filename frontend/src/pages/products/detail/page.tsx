@@ -25,7 +25,7 @@ function ProductDetailPage() {
 
 		ProductService.findById(id)
 			.then(setProduct)
-			.catch(() => navigate('/404'))
+			.catch(() => navigate('/'))
 			.finally(() => setLoading(false));
 
 		return () => {
@@ -40,7 +40,13 @@ function ProductDetailPage() {
 	return (
 		<div className='mx-auto w-full max-w-7xl grid-cols-6 gap-6 p-6 lg:grid'>
 			<section className='col-span-3'>
-				<figure className='aspect-square w-full rounded-lg bg-neutral-200'></figure>
+				<figure className='aspect-square w-full rounded-lg bg-neutral-200'>
+					<img
+						src={`data:image/jpeg;base64,${product.image.dataBase64}`}
+						alt={product.name}
+						className='h-full w-full object-cover'
+					/>
+				</figure>
 			</section>
 
 			<section className='col-span-3 mt-6 flex flex-col gap-4'>
@@ -49,7 +55,7 @@ function ProductDetailPage() {
 				<Button className='w-full lg:w-auto lg:self-start' onClick={() => addToCart(product)}>
 					Añadir al carrito
 				</Button>
-				<p className='text-sm font-medium text-neutral-500'>{product.desc}</p>
+				<p className='text-sm font-medium text-neutral-500'>{product.description}</p>
 			</section>
 		</div>
 	);

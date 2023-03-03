@@ -24,9 +24,12 @@ function Navbar() {
 			</div>
 
 			<menu className='flex items-center gap-2'>
-				<button className='rounded-full p-2 text-neutral-300 transition-colors hover:bg-white/10'>
+				<Link
+					to={Route.SEARCH}
+					className='rounded-full p-2 text-neutral-300 transition-colors hover:bg-white/10'
+				>
 					<SearchIcon />
-				</button>
+				</Link>
 				{isCartPage ? (
 					<NavLink
 						to={Route.SHOPPING_CART}

@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { authService } from '~/servicies/auth.service';
+import { useAuth } from '~/hooks/use-auth';
 
 const LoginSchema = z.object({
 	email: z.string().email('El correo electrónico no es válido'),
@@ -15,6 +15,7 @@ const LoginSchema = z.object({
 type LoginSchemaType = z.infer<typeof LoginSchema>;
 
 export function useLoginModal() {
+	const { login } = useAuth();
 	const {
 		register,
 		handleSubmit,
@@ -24,9 +25,7 @@ export function useLoginModal() {
 	});
 
 	const onSubmit = async (data: LoginSchemaType) => {
-		const { token, user } = await authService.login(data);
-		localStorage.setItem('token', token);
-		localStorage.setItem('user', JSON.stringify(user));
+		login(data);
 	};
 
 	return {

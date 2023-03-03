@@ -4,7 +4,6 @@ import Button from '~/components/ui/primitives/button';
 import TextField from '~/components/ui/primitives/text-field';
 import { Route } from '~/constants';
 
-import DateField from '../ui/primitives/date-field';
 import Modal from './modal';
 import { useRegisterModal } from './register/use-register-modal';
 
@@ -18,14 +17,13 @@ function RegisterModal() {
 				onSubmit={handleSubmit}
 				className='my-6 grid-cols-2 gap-6 space-y-4  p-2 md:grid md:space-y-0'
 			>
-				<TextField label='Nombre' {...register('name')} error={errors.name?.message} />
+				<TextField label='Nombre' {...register('firstName')} error={errors.firstName?.message} />
 				<TextField label='Apellidos' {...register('lastName')} error={errors.lastName?.message} />
-				<TextField label='Teléfono' {...register('phone')} error={errors.phone?.message} />
-				<DateField
-					label='Fecha de nacimiento'
-					placeholder='dd/mm/aaaa'
-					{...register('bornDate')}
-					error={errors.bornDate?.message}
+				<TextField
+					label='Teléfono'
+					className='col-span-2'
+					{...register('phone')}
+					error={errors.phone?.message}
 				/>
 				<TextField
 					type='email'

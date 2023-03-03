@@ -9,7 +9,8 @@ const VARIANTS = {
 	],
 	secondary: [
 		'border-brand-accent bg-transparent text-brand-accent',
-		'hover:bg-brand-accent hover:text-white',
+		'enabled:hover:bg-brand-accent enabled:hover:text-white',
+		'disabled:border-neutral-300/70 disabled:text-neutral-300',
 	],
 };
 

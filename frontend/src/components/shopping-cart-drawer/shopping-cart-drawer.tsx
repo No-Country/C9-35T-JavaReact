@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ShoppingCartIcon, XIcon } from '~/components/ui/icons/outline';
+import { Route } from '~/constants';
 import { useAuth } from '~/hooks/use-auth';
 import useShoppingCart from '~/hooks/use-shopping-cart';
 import { currencyFormat } from '~/utils/currency-format';
@@ -17,10 +18,9 @@ function ShoppingCartDrawer() {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		if (!isUserLoggedIn) {
-			setOpen(false);
-			navigate('/acceso');
-		}
+		const to = isUserLoggedIn ? Route.SHOPPING_CART : Route.LOGIN;
+		setOpen(false);
+		navigate(to);
 	};
 
 	return (

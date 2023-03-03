@@ -116,14 +116,17 @@ function NavbarDrawer() {
 					forceMount
 					className='fixed top-0 left-0 z-40 grid h-screen w-80 grid-rows-[auto_1fr] overflow-y-auto rounded-r-2xl bg-white transition-transform'
 				>
-					<header className='flex flex-col gap-4 bg-gradient-to-r from-brown-900 to-brown-700 p-4 pt-0'>
-						<figure className='mt-12 flex h-16 w-16 items-center justify-center rounded-full bg-white/10'>
-							<LogoIcon />
+					<header className='relative flex flex-col gap-4 overflow-hidden bg-gradient-to-r from-brown-900 to-brown-700 p-4 pt-0'>
+						{isUserLoggedIn && user ? (
+							<img src={user.avatar} className='absolute inset-0 object-cover opacity-25 blur-lg' />
+						) : null}
+						<figure className='mt-12 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white/10'>
+							{isUserLoggedIn && user ? <img src={user.avatar} /> : <LogoIcon />}
 						</figure>
 						{isUserLoggedIn && user ? (
 							<section>
 								<p className='font-semibold text-white'>
-									{user.name} {user.lastName}
+									{user.firstName} {user.lastName}
 								</p>
 								<p className='text-xs font-medium text-neutral-300'>{user.email}</p>
 							</section>

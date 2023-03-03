@@ -1,17 +1,23 @@
 import { HeartIcon, TrashIcon } from '~/components/ui/icons/outline';
 import useShoppingCart from '~/hooks/use-shopping-cart';
-import { ShoppoingCartProduct } from '~/types';
+import type { ShoppoingCartProduct } from '~/types';
 import { currencyFormat } from '~/utils/currency-format';
 
 import QuantityControl from './quantity-control';
 
-function ShoppingCartItem({ id, name, price, quantity }: ShoppoingCartProduct) {
+function ShoppingCartItem({ id, name, image, price, quantity }: ShoppoingCartProduct) {
 	const { removeFromCart } = useShoppingCart();
 	const preparedPrice = currencyFormat(price);
 
 	return (
 		<article className='grid grid-cols-[auto_1fr] gap-4 rounded-xl border border-neutral-300/70 p-4'>
-			<figure className='aspect-square w-16 rounded-lg bg-neutral-200'></figure>
+			<figure className='aspect-square w-16 rounded-lg bg-neutral-200'>
+				<img
+					src={`data:image/jpeg;base64,${image.dataBase64}`}
+					alt={name}
+					className='h-full w-full object-cover'
+				/>
+			</figure>
 			<section className='flex flex-col justify-between'>
 				<header className='flex items-center justify-between gap-4'>
 					<p className='text-sm font-medium'>{name}</p>

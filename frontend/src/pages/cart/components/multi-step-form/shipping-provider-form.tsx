@@ -2,9 +2,19 @@ import * as RadioGroup from '@radix-ui/react-radio-group';
 
 import { cn } from '~/utils/cn';
 
-function ShippingProviderForm() {
+type Props = {
+	value: string;
+	onChange: (value: string) => void;
+};
+
+function ShippingProviderForm({ value, onChange }: Props) {
 	return (
-		<RadioGroup.Root className='grid grid-cols-4 gap-4' defaultValue={OPTIONS[0].value}>
+		<RadioGroup.Root
+			className='grid gap-4 md:grid-cols-4'
+			defaultValue={OPTIONS[0].value}
+			value={value}
+			onValueChange={onChange}
+		>
 			{OPTIONS.map(option => (
 				<RadioGroup.Item
 					key={option.value}
@@ -22,10 +32,10 @@ function ShippingProviderForm() {
 }
 
 const OPTIONS = [
-	{ value: 'oca', label: 'OCA' },
-	{ value: 'correo-argentino', label: 'Correo Argentino' },
-	{ value: 'mercado-envios', label: 'Mercado envios' },
-	{ value: 'andreani', label: 'Andreani' },
+	{ value: 'OCA', label: 'OCA' },
+	{ value: 'Correo Argentino', label: 'Correo Argentino' },
+	{ value: 'Mercado envíos', label: 'Mercado envíos' },
+	{ value: 'Andreani', label: 'Andreani' },
 ];
 
 export default ShippingProviderForm;
