@@ -1,9 +1,13 @@
 export { default as ArrowLeftIcon } from './arrow-left-icon';
+export { default as BedIcon } from './bed-icon';
+export { default as DiningIcon } from './dining-icon';
 export { default as HeartIcon } from './heart-icon';
+export { default as LivingIcon } from './living-icon';
 export { default as MenuIcon } from './menu-icon';
 export { default as QuestionMarkCircleIcon } from './question-mark-circle-icon';
 export { default as SearchIcon } from './search-icon';
 export { default as ShoppingCartIcon } from './shopping-cart-icon';
+export { default as StudioIcon } from './studio-icon';
 export { default as TagIcon } from './tag-icon';
 export { default as TrashIcon } from './trash-icon';
 export { default as UserCircleIcon } from './user-circle-icon';

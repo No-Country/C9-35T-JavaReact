@@ -23,7 +23,7 @@ function HelpPage() {
 				<section className='mb-6'>
 					<h1 className='text-xl font-bold'>Ayuda</h1>
 					<p className='text-sm font-medium text-neutral-500'>
-						Aquí encontrarás las preguntas frecuentes y los reclamos más comunes.
+						Aquí encontrarás las preguntas frecuentes.
 					</p>
 				</section>
 				<Accordion
@@ -32,54 +32,55 @@ function HelpPage() {
 					className='flex flex-col gap-4'
 				>
 					<AccordionItem value='preguntas-frecuentes'>
-						<AccordionTrigger>Preguntas frecuentes</AccordionTrigger>
+						<AccordionTrigger>Cómo comprar</AccordionTrigger>
 						<AccordionContent>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae esse quo magnam ab,
-							assumenda dolores aut rerum sequi. Ipsam aliquam nostrum qui ut suscipit, impedit
-							molestiae consectetur eaque dolorem magnam voluptate enim tempora repellat cumque aut
-							consequatur tenetur quasi reiciendis fugit, totam nam quae inventore. Neque optio
-							incidunt eos vitae natus sequi id sapiente nostrum aspernatur fuga, inventore beatae
-							mollitia!
+							Elegí, paga y recibí tu pedido sin moverte de tu casa. Comprar nuestros productos es
+							muy fácil y rápido: Elige el producto que deseas comprar. Haz clic en el botón de
+							"Agregar al carrito". Esto agregará el producto a tu carrito y te llevará al mismo.
+							Puedes seguir agregando otros productos al carrito o sino haz clic en "Continuar".
+							Completa tus datos. Ingresa la dirección a donde deseas recibir el producto. Luego haz
+							clic en "Continuar". Elige el medio de pago. Una vez que hayas elegido el medio de
+							pago, haz clic en "Finalizar compra". Una vez acreditado el pago, haremos el envío
+							correspondiente de los productos que hayas comprado de la forma que hayas elegido.
+							Ante cualquier duda no dejes de contactarnos.
 						</AccordionContent>
 					</AccordionItem>
 
 					<AccordionItem value='reclamos'>
 						<AccordionTrigger>Reclamos</AccordionTrigger>
 						<AccordionContent>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi debitis quo a dolor ab
-							quas iste officia voluptate assumenda. Ex iure neque nobis eligendi in possimus
-							laboriosam, velit soluta repellat cumque rem, dolore corporis optio dolores fugiat
-							harum atque! Voluptatem sunt ducimus vel esse numquam, aliquam cumque pariatur nihil
-							modi quod ipsum odio maiores beatae unde sapiente! Assumenda facere sint voluptas
-							dolor harum! Doloremque velit doloribus vitae hic, similique ipsa!
+							En Mueblerama priorizamos la satisfacción del cliente, por eso si el producto no
+							cumple con tus expectativas, te devolvemos el dinero por el medio de pago utilizado.
+							Los productos no poseen garantía. Si decidís cancelar tu compra, te reintegramos el
+							total del valor del(los) producto(s) adquirido(s). No contemplamos el reintegro del
+							valor del envío debido a que el servicio de transporte es tercerizado. Las
+							cancelaciones y devoluciones, solo pueden ser realizadas durante los 5 días hábiles
+							posteriores a recibir el(los) producto(s). Ante cualquier inconveniente contáctenos a
+							la brevedad.
 						</AccordionContent>
 					</AccordionItem>
 
 					<AccordionItem value='envios'>
 						<AccordionTrigger>Envíos</AccordionTrigger>
 						<AccordionContent>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor ipsam deserunt
-							inventore mollitia vero doloremque animi, ea voluptas labore cumque explicabo,
-							accusantium dicta eos nulla? Blanditiis asperiores, eligendi quaerat sit obcaecati,
-							qui, culpa laudantium quasi eum consequatur dolorem porro laboriosam adipisci et nisi.
-							Doloribus quibusdam officia placeat voluptates qui voluptatibus architecto sint
-							nostrum debitis corrupti quae, modi, aspernatur laudantium necessitatibus aperiam
-							optio nobis aliquam deserunt sapiente explicabo aliquid est consequuntur!
-							Perspiciatis, adipisci perferendis. Veritatis obcaecati esse incidunt. Aspernatur
-							veritatis et rerum numquam facere, deserunt quia, reprehenderit ut beatae asperiores
-							perferendis ducimus architecto explicabo adipisci necessitatibus culpa, placeat fuga
-							assumenda vitae.
+							Se realizan en un plazo de 7 a 10 días hábiles aprox. Usted podrá seleccionar el medio
+							de envío que desee. Además contamos con un servicio de embalaje para que tus muebles
+							viajen protegidos. El embalaje cubre al mueble en su totalidad, sin perjuicio de que
+							si se maltrata el producto con golpes, este pueda romperse dentro del paquete. El
+							producto debe ser manipulado por manos expertas que le dispensen el cuidado de rigor
+							que requiere. Si no recibe el(los) producto(s) en el tiempo estimado por favor
+							contáctenos y resolveremos su problema.
 						</AccordionContent>
 					</AccordionItem>
 
-					<AccordionItem value='contactanos'>
+					{/* <AccordionItem value='contactanos'>
 						<AccordionTrigger>Contáctanos</AccordionTrigger>
 						<AccordionContent>
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos odit vitae voluptas
 							necessitatibus sunt officia velit nemo sed nisi expedita accusantium impedit pariatur
 							perferendis reprehenderit ad asperiores, optio, hic earum?
 						</AccordionContent>
-					</AccordionItem>
+					</AccordionItem> */}
 				</Accordion>
 			</main>
 		</section>

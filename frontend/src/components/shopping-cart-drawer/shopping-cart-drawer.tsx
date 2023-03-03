@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ShoppingCartIcon, XIcon } from '~/components/ui/icons/outline';
+import { Route } from '~/constants';
 import { useAuth } from '~/hooks/use-auth';
 import useShoppingCart from '~/hooks/use-shopping-cart';
+import { currencyFormat } from '~/utils/currency-format';
 
 import Button from '../ui/primitives/button';
 import ProductList from './product-list';
@@ -16,20 +18,18 @@ function ShoppingCartDrawer() {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		if (!isUserLoggedIn) {
-			setOpen(false);
-			navigate('/');
-			// requestLogin();
-		}
+		const to = isUserLoggedIn ? Route.SHOPPING_CART : Route.LOGIN;
+		setOpen(false);
+		navigate(to);
 	};
 
 	return (
 		<Dialog.Root open={open} onOpenChange={setOpen}>
 			<Dialog.Trigger asChild>
-				<button className='relative rounded-full p-2 text-neutral-600 transition-colors hover:bg-black/5'>
+				<button className='relative rounded-full p-2 text-neutral-300 transition-colors hover:bg-white/10'>
 					<ShoppingCartIcon />
 					{cartItemsCount > 0 && (
-						<span className='absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-neutral-500 text-[10px] font-bold text-white'>
+						<span className='absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-brown-800 text-[10px] font-bold text-white'>
 							{cartItemsCount}
 						</span>
 					)}
@@ -51,7 +51,7 @@ function ShoppingCartDrawer() {
 						<ProductList />
 					</section>
 					<footer className='flex flex-col gap-2 p-4'>
-						Subtotal: {subtotal}
+						Subtotal: {currencyFormat(subtotal)}
 						<Button onClick={handleClick}>Comprar</Button>
 					</footer>
 				</Dialog.Content>

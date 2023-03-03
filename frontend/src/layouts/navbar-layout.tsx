@@ -7,11 +7,11 @@ import { ShoppingCartContextProvider } from '~/contexts/shopping-cart-context';
 function NavbarLayout() {
 	return (
 		<ShoppingCartContextProvider>
-			<div className='grid h-full w-full grid-rows-[auto_1fr]'>
+			<div className='grid h-full min-h-screen w-full grid-rows-[auto_1fr_auto]'>
 				<Navbar />
 				<Outlet />
+				<Footer />
 			</div>
-			<Footer />
 		</ShoppingCartContextProvider>
 	);
 }
