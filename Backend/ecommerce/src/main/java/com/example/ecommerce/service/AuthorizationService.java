@@ -122,7 +122,7 @@ public class AuthorizationService implements IAuthorizationService {
         }
         User user = userRepository.findByEmail(patchUserDto.getEmail());
 
-        user.setPassword(passwordEncoder.encode(patchUserDto.getPassword()));
+//        user.setPassword(passwordEncoder.encode(patchUserDto.getPassword()));
         user.setFirstName(patchUserDto.getFirstName());
         user.setLastName(patchUserDto.getLastName());
         user.setEmail(user.getEmail());

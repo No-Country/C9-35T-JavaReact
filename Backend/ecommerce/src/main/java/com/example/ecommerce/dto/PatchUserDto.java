@@ -15,5 +15,4 @@ public class PatchUserDto {
     private String city;
     private String phone;
     private String address;
-    private String password;
 }
